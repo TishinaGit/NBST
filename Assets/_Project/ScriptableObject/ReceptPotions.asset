@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89057386a57a0f42a5a6f10d9dd270a, type: 3}
+  m_Name: ReceptPotions
+  m_EditorClassIdentifier: 
+  ReceiptsPotions:
+  - AvatarItem: {fileID: 21300000, guid: a9f3ab25acadbbe40892e0d3cc25918d, type: 3}
+    ItemPotionType: 4
+    isCraft: 0
+    Count: 1
+    itemsForReceiptstStructs:
+    - ItemType: 7
+      SpriteItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
+      Count: 1
+      isInStock: 1
+    - ItemType: 10
+      SpriteItem: {fileID: 21300000, guid: 117b17facff65dc42b1b57deb7c21551, type: 3}
+      Count: 1
+      isInStock: 0
+  - AvatarItem: {fileID: 21300000, guid: 0f2e408d2f6635d449a00c01e0312efc, type: 3}
+    ItemPotionType: 5
+    isCraft: 0
+    Count: 1
+    itemsForReceiptstStructs:
+    - ItemType: 8
+      SpriteItem: {fileID: 21300000, guid: 2d7d9ae02b7159843ac7d5ead0f8b89a, type: 3}
+      Count: 1
+      isInStock: 0
+    - ItemType: 11
+      SpriteItem: {fileID: 21300000, guid: 44dc65116207f4b46aa85443dae5ad96, type: 3}
+      Count: 1
+      isInStock: 0
+  - AvatarItem: {fileID: 21300000, guid: 0bf427997cb4ec340827fbc02cb39017, type: 3}
+    ItemPotionType: 6
+    isCraft: 0
+    Count: 1
+    itemsForReceiptstStructs:
+    - ItemType: 9
+      SpriteItem: {fileID: 21300000, guid: ace8a02646afeda4880fc3cb14cad705, type: 3}
+      Count: 1
+      isInStock: 0
+    - ItemType: 12
+      SpriteItem: {fileID: 21300000, guid: 7b3876a2b72c44540a4bbd5aaba9e506, type: 3}
+      Count: 1
+      isInStock: 0

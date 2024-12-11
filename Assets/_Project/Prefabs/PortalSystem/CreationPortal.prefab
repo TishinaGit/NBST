@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4462180446073244226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5569971520996817354}
+  - component: {fileID: 392521679353868117}
+  m_Layer: 0
+  m_Name: CreationPortal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5569971520996817354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462180446073244226}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27072036, y: 103.51281, z: -3.8205416}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &392521679353868117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462180446073244226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb43b03059f6bec449882cf86d6865c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeableObjectPrefab: {fileID: 9171825369883775623, guid: 388a7df66dac4064ca1fd7a5f0926d2d,
+    type: 3}
+  previewObjectPrefab: {fileID: 3910846274963816258, guid: cc7b64bcf77b7d946a0811ecc9da9b38,
+    type: 3}
+  playerCamera: {fileID: 0}
+  placementSurfaceLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  previewMaterial: {fileID: 2100000, guid: 17c6582319045b74b88754353f6a46b1, type: 2}
+  validColor: {r: 0, g: 1, b: 0.16524458, a: 0.49019608}
+  invalidColor: {r: 1, g: 0, b: 0, a: 0.49019608}
+  objectDistanceFromPlayer: 20
+  raycastStartVerticalOffset: 100
+  raycastDistance: 1000

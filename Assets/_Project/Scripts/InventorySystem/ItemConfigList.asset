@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e558425243049645a1c35049b14fe0e, type: 3}
+  m_Name: ItemConfigList
+  m_EditorClassIdentifier: 
+  sheetId: 1QW6NG499_63UXbkoxKqi6HurTKtBfo1cTbQ0S8aXrvk
+  gridId: 0
+  items:
+  - Name: None
+    AvatarItem: {fileID: 0}
+    DescriptionItem: 
+    Type: 0
+    Count: 0
+    ItemPotionEnum: 1
+  - Name: Potion_0
+    AvatarItem: {fileID: -154935220, guid: d990b6de56fada141ae55c575a883777, type: 3}
+    DescriptionItem: wergwterhb
+    Type: 1
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: Potion_1
+    AvatarItem: {fileID: 21300000, guid: 99a0b982adc31b044bc46f0ec7f8fe16, type: 3}
+    DescriptionItem: jetyhwrg
+    Type: 2
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: Potion_2
+    AvatarItem: {fileID: 21300000, guid: af993400167e83d41b9f9ca7934b3b5e, type: 3}
+    DescriptionItem: brfbvefbnrfgqergqergeqrgqergeqrgeqrgeqrgerg
+    Type: 3
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: PotionWB_0
+    AvatarItem: {fileID: 21300000, guid: a9f3ab25acadbbe40892e0d3cc25918d, type: 3}
+    DescriptionItem: rgb
+    Type: 4
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: PotionWB_1
+    AvatarItem: {fileID: 21300000, guid: 0f2e408d2f6635d449a00c01e0312efc, type: 3}
+    DescriptionItem: srfghb
+    Type: 5
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: PotionWB_2
+    AvatarItem: {fileID: 21300000, guid: 0bf427997cb4ec340827fbc02cb39017, type: 3}
+    DescriptionItem: wrtgn
+    Type: 6
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: BluePotion_0
+    AvatarItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
+    DescriptionItem: ghd
+    Type: 7
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: BluePotion_1
+    AvatarItem: {fileID: 21300000, guid: 2d7d9ae02b7159843ac7d5ead0f8b89a, type: 3}
+    DescriptionItem: wergwterhb
+    Type: 8
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: BluePotion_2
+    AvatarItem: {fileID: 21300000, guid: ace8a02646afeda4880fc3cb14cad705, type: 3}
+    DescriptionItem: hwrt
+    Type: 9
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: RedPotion_0
+    AvatarItem: {fileID: 21300000, guid: 117b17facff65dc42b1b57deb7c21551, type: 3}
+    DescriptionItem: jtyerg
+    Type: 10
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: RedPotion_1
+    AvatarItem: {fileID: 21300000, guid: 44dc65116207f4b46aa85443dae5ad96, type: 3}
+    DescriptionItem: qwegf
+    Type: 11
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: RedPotion_2
+    AvatarItem: {fileID: 21300000, guid: 7b3876a2b72c44540a4bbd5aaba9e506, type: 3}
+    DescriptionItem: jeyt
+    Type: 12
+    Count: 1
+    ItemPotionEnum: 0
+  - Name: Weapon
+    AvatarItem: {fileID: 21300000, guid: bbf8638a8a75d9c42b93639213c92c9b, type: 3}
+    DescriptionItem: Bow
+    Type: 13
+    Count: 1
+    ItemPotionEnum: 1
+  - Name: Apple
+    AvatarItem: {fileID: 21300000, guid: da7129ed6a246f048a49d8d97de2d2d4, type: 3}
+    DescriptionItem: Apple
+    Type: 14
+    Count: 1
+    ItemPotionEnum: 1

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a81e8f1b07fb443a830aebe9f4c631, type: 3}
+  m_Name: TaskPotionSO
+  m_EditorClassIdentifier: 
+  listTasks:
+  - PotionTaskEnum: 0
+    listTasks:
+    - ItemTypeEnum: 4
+      DescriptionItem: 1
+      AvatarItem: {fileID: 21300000, guid: a9f3ab25acadbbe40892e0d3cc25918d, type: 3}
+      Count: 1
+    - ItemTypeEnum: 7
+      DescriptionItem: 1
+      AvatarItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
+      Count: 1
+    - ItemTypeEnum: 11
+      DescriptionItem: 1
+      AvatarItem: {fileID: 21300000, guid: 44dc65116207f4b46aa85443dae5ad96, type: 3}
+      Count: 1
+    TaskIndex: 0
+  - PotionTaskEnum: 1
+    listTasks:
+    - ItemTypeEnum: 5
+      DescriptionItem: 1
+      AvatarItem: {fileID: 21300000, guid: 0f2e408d2f6635d449a00c01e0312efc, type: 3}
+      Count: 1
+    - ItemTypeEnum: 7
+      DescriptionItem: 2
+      AvatarItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
+      Count: 2
+    - ItemTypeEnum: 11
+      DescriptionItem: 1
+      AvatarItem: {fileID: 21300000, guid: 44dc65116207f4b46aa85443dae5ad96, type: 3}
+      Count: 1
+    TaskIndex: 1
+  - PotionTaskEnum: 2
+    listTasks:
+    - ItemTypeEnum: 6
+      DescriptionItem: 1
+      AvatarItem: {fileID: 21300000, guid: 0bf427997cb4ec340827fbc02cb39017, type: 3}
+      Count: 1
+    - ItemTypeEnum: 7
+      DescriptionItem: 1
+      AvatarItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
+      Count: 3
+    - ItemTypeEnum: 11
+      DescriptionItem: 1
+      AvatarItem: {fileID: 21300000, guid: 44dc65116207f4b46aa85443dae5ad96, type: 3}
+      Count: 1
+    TaskIndex: 2
