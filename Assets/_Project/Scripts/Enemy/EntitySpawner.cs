@@ -35,8 +35,7 @@ public class EntitySpawner : MonoBehaviour
 		if (m_SpawnMode == SpawnMode.Loop && m_Timer < 0)
 		{
 			SpawnEntities();
-
-
+			 
 			m_Timer = m_RespawnTime;
 		}
 	}
