@@ -11,8 +11,11 @@ namespace Controller
         [Header("Components")]
         [SerializeField] private CharacterController _characterController; 
         [SerializeField] private PlayerLocomotionInput _playerLocomotionInput;
+        [SerializeField] private PlayerActionsInput _playerActionsInput;
         [SerializeField] private PlayerState _playerState;
         [SerializeField] private Transform _mainCam;
+        [SerializeField] private Transform _aimTarget;
+        [SerializeField] private Transform _test;
 
         [Header("MovementSettings")]
         [SerializeField] private float RunSpeed = 10f;
@@ -31,8 +34,9 @@ namespace Controller
         [SerializeField] private LayerMask _groundLayers;
         private void Awake()
         {
-            //_playerLocomotionInput = GetComponent<PlayerLocomotionInput>();
-            //_playerState = GetComponent<PlayerState>();
+            _playerLocomotionInput = GetComponentInChildren<PlayerLocomotionInput>();
+            _playerState = GetComponentInChildren<PlayerState>();
+            _playerActionsInput = GetComponentInChildren<PlayerActionsInput>();
             _antiBump = SprintSpeed;
             _stepOffset = _characterController.stepOffset;
         } 
@@ -112,10 +116,12 @@ namespace Controller
             var adjusteMovement = adjustedDirection * (clampLateralMagnitude * Time.deltaTime);
             adjusteMovement.y += _verticalVelocity * Time.deltaTime;
             adjusteMovement = !isGrounded ? HandleSteepWalls(adjusteMovement) : adjusteMovement;
-
+             
             _characterController.Move(adjusteMovement);
-            HandleRotation(adjustedDirection); 
+            HandleRotation(adjustedDirection);
+
         }
+ 
 
         private Vector3 HandleSteepWalls(Vector3 velocity)
         {
@@ -129,16 +135,19 @@ namespace Controller
             return velocity;
         }
 
-        public void HandleRotation(Vector3 adjustedDirection )
+        public void HandleRotation(Vector3 adjustedDirection)
         {
-            if (adjustedDirection != Vector3.zero)
+            if ( _playerActionsInput.AttackPressed == true) 
+            { 
+                adjustedDirection = _aimTarget.position; 
+                transform.LookAt(adjustedDirection); 
+            }
+
+            if (adjustedDirection.magnitude > Zero && _playerActionsInput.AttackPressed == false)
             {
-                if (adjustedDirection.magnitude > Zero)
-                { 
-                    var targetRotation = Quaternion.LookRotation(adjustedDirection);
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime);
-                    transform.LookAt(transform.position + adjustedDirection); 
-                } 
+                var targetRotation = Quaternion.LookRotation(adjustedDirection);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime);
+                transform.LookAt(transform.position + adjustedDirection); 
             } 
         }
 

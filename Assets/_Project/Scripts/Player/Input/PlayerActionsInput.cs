@@ -24,13 +24,20 @@ namespace Controller
             PlayerControls.PlayerActionMap.Disable();
             PlayerControls.PlayerActionMap.RemoveCallbacks(this);
         }
-  
+
+        private void Update()
+        {
+            if (AttackPressed == true)
+            {
+                _playerShooter.Shoot();
+            }
+        }
+
         public void OnAttack(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                AttackPressed = true;
-                _playerShooter.Shoot();
+                AttackPressed = true; 
 
             }
             else if (context.canceled)
