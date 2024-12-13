@@ -1,17 +1,17 @@
- using UnityEngine;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Controller
 {
     [DefaultExecutionOrder(-2)]
     public class PlayerLocomotionInput : MonoBehaviour, PlayerControls.IPlayerLocomotionMapActions
-    {
-        [SerializeField] private bool _isHoldToSprint = true;
-
+    { 
         public PlayerControls PlayerControls { get; private set; }
         public Vector2 MovementInput { get; private set; }
         public bool IsSprint { get; private set; }
         public bool IsJump { get; private set; }
+
+        private bool _isHoldToSprint = true;
 
         private void OnEnable()
         {

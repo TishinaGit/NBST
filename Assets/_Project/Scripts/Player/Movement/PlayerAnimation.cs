@@ -8,6 +8,7 @@ namespace Controller
         [SerializeField] private float _locomotionBlendSpeed = 5f;
 
         private PlayerLocomotionInput _playerLocomotionInput;
+        private PlayerActionsInput _playerActionsInput;
         private PlayerState _playerState; 
 
         private static int inputXHash = Animator.StringToHash("inputX");
@@ -17,11 +18,14 @@ namespace Controller
         private static int isFallingHash = Animator.StringToHash("isFalling");
         private static int isJumpingHash = Animator.StringToHash("isJumping");
 
+        private static int isAttackingHash = Animator.StringToHash("isAttacking");
+
         private Vector3 _currentBlendInput = Vector3.zero;
 
         private void Awake()
         {
             _playerLocomotionInput = GetComponent<PlayerLocomotionInput>();
+            _playerActionsInput = GetComponent<PlayerActionsInput>();
             _playerState = GetComponent<PlayerState>(); 
         }
 
@@ -46,6 +50,7 @@ namespace Controller
             _animator.SetBool(isGroundedHash, isGrounded); 
             _animator.SetBool(isFallingHash, isFalling);
             _animator.SetBool(isJumpingHash, isJumping);
+            _animator.SetBool(isAttackingHash, _playerActionsInput.AttackPressed);
 
             _animator.SetFloat(inputXHash, _currentBlendInput.x);
             _animator.SetFloat(inputYHash, _currentBlendInput.y);

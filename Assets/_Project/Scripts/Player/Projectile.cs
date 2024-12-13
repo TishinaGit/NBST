@@ -7,12 +7,7 @@ public class Projectile : Entity
 
 	[SerializeField] private float m_LifeTime;
 
-	[SerializeField] protected int m_Damage;
-
-	[SerializeField] private ImpactEffect m_ImpactEffectPrefab;
-	[SerializeField] private ImpactEffect m_ImpactEffectPrefabMetal;
-
-	[SerializeField] private CubeArea m_Area;
+	[SerializeField] protected int m_Damage; 
 
 	private float m_Timer;
 
@@ -32,12 +27,9 @@ public class Projectile : Entity
 				if (dest != null && dest != m_Parent)
 				{
 					dest.ApplyDamage(m_Damage, m_Parent);
-				}
-
-				OnProjectileLifeEnd(hit.collider, hit.point, hit.normal);
+				} 
 			}
-		}
-
+		} 
 
 		m_Timer += Time.deltaTime;
 
@@ -47,25 +39,7 @@ public class Projectile : Entity
 		}
 
 		transform.position += new Vector3(step.x, step.y, step.z);
-	}
-
-	public virtual void OnProjectileLifeEnd(Collider col, Vector3 pos, Vector3 normal)
-	{
-		
-
-		if (col is CharacterController)
-			return;
-
-		if (m_ImpactEffectPrefab != null)
-		{   
-			ImpactEffect impact = Instantiate(m_ImpactEffectPrefab, pos, Quaternion.LookRotation(normal));
-
-			impact.transform.SetParent(col.transform);
-		}
-
-		Destroy(gameObject);
-	}
-
+	} 
 	protected Destructible m_Parent;
 
 	public virtual void SetParentShooter(Destructible parent)

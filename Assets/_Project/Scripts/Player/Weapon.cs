@@ -10,9 +10,7 @@ public class Weapon : MonoBehaviour
 
 	[SerializeField] private Transform m_FirePoint;
 
-	[SerializeField] private float m_PrimaryMaxEnergy;
-
-	 [SerializeField] private ParticleSystem m_MuzzleParcticleSystem;
+	[SerializeField] private float m_PrimaryMaxEnergy; 
 
 	private float m_RefireTimer;
 
@@ -95,10 +93,7 @@ public class Weapon : MonoBehaviour
 
 		m_RefireTimer = m_WeaponProperties.RateOfFire;
 
-		{
-			m_MuzzleParcticleSystem.time = 0;
-			m_MuzzleParcticleSystem.Play();
-
+		{ 
 			_audioSource.clip = m_WeaponProperties.LaunchSFX;
 			_audioSource.Play();
 		}
