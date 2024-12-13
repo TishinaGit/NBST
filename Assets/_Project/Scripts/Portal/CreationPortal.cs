@@ -1,7 +1,5 @@
 using UnityEngine;
-using Cinemachine;
-using UnityEngine.InputSystem;
-using Player.Controller;
+using Cinemachine;  
 
 public class CreationPortal : MonoBehaviour
 {
