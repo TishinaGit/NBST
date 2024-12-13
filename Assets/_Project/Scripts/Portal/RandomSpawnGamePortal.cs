@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ using UnityEngine;
 
 public class RandomSpawnGamePortal : MonoBehaviour
 {
     [SerializeField] private GameObject _gamePortal;
-    [SerializeField] private Transform[] _spawnTarget;
-    private Transform g;
+    [SerializeField] private Transform[] _spawnTarget; 
  
     private void RandomSpawn()
     {

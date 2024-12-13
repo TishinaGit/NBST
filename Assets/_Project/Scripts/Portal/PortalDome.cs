@@ -9,12 +9,10 @@ public class PortalDome : MonoBehaviour
     private bool _isActive = false;
     private void Update()
     {
-        Kostil();
-
-
+        Kostil(); 
         if (_isActive == true)
         {
-            _dome.transform.localScale = Vector3.Lerp(_dome.transform.localScale, new Vector3(12, 12, 12),   Time.deltaTime);
+            _dome.transform.localScale = Vector3.Lerp(_dome.transform.localScale, new Vector3(8, 8, 8),   Time.deltaTime);
         }
         
     }
