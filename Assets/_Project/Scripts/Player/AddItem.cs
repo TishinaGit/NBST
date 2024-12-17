@@ -61,6 +61,6 @@ public class AddItem : MonoBehaviour
 
     private void AddItems()
     {
-        _inventoryPanel.AddItem(ItemTypeEnum.Apple, 1, _sprite);
+        _inventoryPanel.AddItem(ItemTypeEnum.Apple, 1, 14);
     }
 }

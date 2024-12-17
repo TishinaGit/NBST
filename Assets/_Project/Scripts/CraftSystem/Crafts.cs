@@ -92,7 +92,7 @@ namespace CraftSystem
 
         private void CreateItem(Receipts receipt)
         {
-            _inventoryPanel.AddItem(receipt.ItemPotionType, receipt.Count, receipt.AvatarItem);  
+             _inventoryPanel.AddItem(receipt.ItemPotionType, receipt.Count, 4);  
         } 
 
         public void RemoveMaterial(Receipts receipts)

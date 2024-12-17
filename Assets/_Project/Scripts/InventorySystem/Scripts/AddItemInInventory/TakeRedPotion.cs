@@ -36,7 +36,7 @@ public class TakeRedPotion : MonoBehaviour
     {
         if (_uiWaterScales.fillAmount > 0.19f)
         {
-            _inventoryPanel.AddItem(ItemTypeEnum.RedPotion_0, 1, _RedPotion_0);
+            _inventoryPanel.AddItem(ItemTypeEnum.RedPotion_0, 1,  10); //_RedPotion_0,
             _uiWaterScales.fillAmount = _uiWaterScales.fillAmount - _minusRedPotion_0;
         }
         else
@@ -49,7 +49,7 @@ public class TakeRedPotion : MonoBehaviour
     {
         if (_uiWaterScales.fillAmount > 0.39f)
         {
-            _inventoryPanel.AddItem(ItemTypeEnum.RedPotion_1, 1, _RedPotion_1);
+            _inventoryPanel.AddItem(ItemTypeEnum.RedPotion_1, 1,  11); //_RedPotion_1,
             _uiWaterScales.fillAmount = _uiWaterScales.fillAmount - _minusRedPotion_1;
         }
         else
@@ -62,7 +62,7 @@ public class TakeRedPotion : MonoBehaviour
     {
         if (_uiWaterScales.fillAmount > 0.59f)
         {
-            _inventoryPanel.AddItem(ItemTypeEnum.RedPotion_2, 1, _RedPotion_2);
+            _inventoryPanel.AddItem(ItemTypeEnum.RedPotion_2, 1,  12);//  _RedPotion_2,
             _uiWaterScales.fillAmount = _uiWaterScales.fillAmount - _minusRedPotion_2;
         }
         else

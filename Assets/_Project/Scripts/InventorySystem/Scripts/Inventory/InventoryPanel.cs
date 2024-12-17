@@ -7,7 +7,8 @@ namespace Inventory
     public class InventoryPanel : MonoBehaviour
     {
         [SerializeField] private List<InventoryCell> _inventoryCells = new();
-           
+        [SerializeField] protected Test _tets;
+
         private void Awake()
         {
             InitInventoryCell(); 
@@ -16,6 +17,7 @@ namespace Inventory
         private void OnEnable()
         {
             OnLoad();
+            
         }
 
         private void OnDisable()
@@ -31,8 +33,10 @@ namespace Inventory
             }
         }
          
+
+        
         #region AddAndRemoveItemInventory
-        public void AddItem(ItemTypeEnum itemTypeEnum, int count, Sprite icon)
+        public void AddItem(ItemTypeEnum itemTypeEnum, int count , int ID)
         {
             InventoryCell firstEmptyCell = null;
 
@@ -41,6 +45,7 @@ namespace Inventory
                 if (firstEmptyCell == null && inventoryCell.CurrentData.Type == ItemTypeEnum.None)
                 {
                     firstEmptyCell = inventoryCell;
+                    _tets.GiveSpriteItem();
                     Save();
                     inventoryCell.ReDraw();
                     DataCentralService.Instance.InventoryStates.UpdateCellData(inventoryCell.CurrentData);
@@ -48,7 +53,8 @@ namespace Inventory
 
                 if (firstEmptyCell != null)
                 {
-                    firstEmptyCell.AddNewItem(itemTypeEnum, count, icon);
+                    firstEmptyCell.AddNewItem(itemTypeEnum, count,  ID);
+                    _tets.GiveSpriteItem();
                     Save();
                     inventoryCell.ReDraw();
                     DataCentralService.Instance.InventoryStates.UpdateCellData(inventoryCell.CurrentData);
@@ -58,6 +64,7 @@ namespace Inventory
                 if (inventoryCell.CurrentData.Type == itemTypeEnum)
                 {
                     inventoryCell.AddCountItem(count);
+                     _tets.GiveSpriteItem();
                     Save();
                     inventoryCell.ReDraw();
                     DataCentralService.Instance.InventoryStates.UpdateCellData(inventoryCell.CurrentData);
@@ -129,7 +136,7 @@ namespace Inventory
             var data = _inventoryCells[id].CurrentData;
             data.Count = _inventoryCells[id].CurrentData.Count;
             data.Type = _inventoryCells[id].CurrentData.Type;
-            data.AvatarItem = _inventoryCells[id].CurrentData.AvatarItem;
+            data.ID = _inventoryCells[id].CurrentData.ID;
             DataCentralService.Instance.InventoryStates.UpdateCellData(data);
         }
 

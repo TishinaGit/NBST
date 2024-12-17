@@ -6,6 +6,7 @@ namespace Inventory
     [Serializable]
     public class ItemConfig
     {
+        public int ID;
         public string Name;
         public Sprite AvatarItem;
         public string DescriptionItem;

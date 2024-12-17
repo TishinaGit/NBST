@@ -10,7 +10,8 @@ namespace Inventory
     { 
         [SerializeField] private TextMeshProUGUI _count;
         [SerializeField] private Image _iconItem;
-        [SerializeField] private Sprite _spriteTransparent; 
+        [SerializeField] private Sprite _spriteTransparent;
+        [SerializeField] protected Test _tets;
         public InventoryCellData CurrentData;
         public int Index;
          
@@ -26,12 +27,12 @@ namespace Inventory
         }
 
         #region AddAndRemoveLogic
-        public void AddNewItem(ItemTypeEnum itemTypeEnum, int count, Sprite icon)
+        public void AddNewItem(ItemTypeEnum itemTypeEnum, int count, int ID)
         {
             CurrentData.Type = itemTypeEnum;
-            CurrentData.Count = count;
-            CurrentData.AvatarItem = icon;
-             
+            CurrentData.Count = count; 
+            CurrentData.ID = ID; 
+
             DataCentralService.Instance.InventoryStates.UpdateCellData(CurrentData);
             ReDraw();
         }
@@ -60,6 +61,8 @@ namespace Inventory
             else
             { 
                 _count.text = CurrentData.Count.ToString();
+                
+                _tets.GiveSpriteItem();
                 _iconItem.sprite = CurrentData.AvatarItem;
             }
             

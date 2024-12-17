@@ -18,6 +18,7 @@ namespace Inventory
             ReadGoogleSheets.FillData<ItemConfig>(sheetId, gridId, listItem =>
             {
                 items = listItem;
+                
                 ReadGoogleSheets.SetDirty(this);
             });
         }
