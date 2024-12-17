@@ -12,6 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcac2cca9c42484caf0b826f2e0b2b6, type: 3}
   m_Name: ItemSpriteDataList
   m_EditorClassIdentifier: 
-  sheetId: 
-  gridId: 
-  ItemsSprite: []
+  sheetId: 1B4u6BLpkWvHNl4P8Sjj5CxsuuVYqQsErBylhHAm9pqg
+  gridId: 0
+  ItemsSprite:
+  - ID: 0
+    AvatarItem: {fileID: 21300000, guid: 74c01a2afcb9c4543b079c5ea9b362eb, type: 3}
+  - ID: 1
+    AvatarItem: {fileID: -154935220, guid: d990b6de56fada141ae55c575a883777, type: 3}
+  - ID: 2
+    AvatarItem: {fileID: 21300000, guid: 99a0b982adc31b044bc46f0ec7f8fe16, type: 3}
+  - ID: 3
+    AvatarItem: {fileID: 21300000, guid: af993400167e83d41b9f9ca7934b3b5e, type: 3}
+  - ID: 4
+    AvatarItem: {fileID: 21300000, guid: a9f3ab25acadbbe40892e0d3cc25918d, type: 3}
+  - ID: 5
+    AvatarItem: {fileID: 21300000, guid: 0f2e408d2f6635d449a00c01e0312efc, type: 3}
+  - ID: 6
+    AvatarItem: {fileID: 21300000, guid: 0bf427997cb4ec340827fbc02cb39017, type: 3}
+  - ID: 7
+    AvatarItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
+  - ID: 8
+    AvatarItem: {fileID: 21300000, guid: 2d7d9ae02b7159843ac7d5ead0f8b89a, type: 3}
+  - ID: 9
+    AvatarItem: {fileID: 21300000, guid: ace8a02646afeda4880fc3cb14cad705, type: 3}
+  - ID: 10
+    AvatarItem: {fileID: 21300000, guid: 117b17facff65dc42b1b57deb7c21551, type: 3}
+  - ID: 11
+    AvatarItem: {fileID: 21300000, guid: 44dc65116207f4b46aa85443dae5ad96, type: 3}
+  - ID: 12
+    AvatarItem: {fileID: 21300000, guid: 7b3876a2b72c44540a4bbd5aaba9e506, type: 3}
+  - ID: 13
+    AvatarItem: {fileID: 21300000, guid: bbf8638a8a75d9c42b93639213c92c9b, type: 3}
+  - ID: 14
+    AvatarItem: {fileID: 21300000, guid: da7129ed6a246f048a49d8d97de2d2d4, type: 3}
