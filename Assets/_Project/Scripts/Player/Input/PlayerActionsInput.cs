@@ -27,7 +27,7 @@ namespace Controller
 
         private void Update()
         {
-            if (AttackPressed == true)
+            if (AttackPressed == true && _playerShooter != null)
             {
                 _playerShooter.Shoot();
             }

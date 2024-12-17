@@ -91,8 +91,7 @@ public class Weapon : MonoBehaviour
 
 		projectile.SetParentShooter(m_Owner);
 
-		m_RefireTimer = m_WeaponProperties.RateOfFire;
-
+		m_RefireTimer = m_WeaponProperties.RateOfFire; 
 		{ 
 			_audioSource.clip = m_WeaponProperties.LaunchSFX;
 			_audioSource.Play();
@@ -111,7 +110,7 @@ public class Weapon : MonoBehaviour
 		m_FirePoint.LookAt(pos + offset);
 	}
 
-	public void AssignLoadout(WeaponProperties props)
+    public void AssignLoadout(WeaponProperties props)
 	{
 		if (Mode != props.Mode)
 			return;

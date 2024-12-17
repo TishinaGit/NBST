@@ -14,8 +14,7 @@ namespace Controller
         [SerializeField] private PlayerActionsInput _playerActionsInput;
         [SerializeField] private PlayerState _playerState;
         [SerializeField] private Transform _mainCam;
-        [SerializeField] private Transform _aimTarget;
-        [SerializeField] private Transform _test;
+        [SerializeField] private Transform _aimTarget; 
 
         [Header("MovementSettings")]
         [SerializeField] private float RunSpeed = 10f;
@@ -137,11 +136,15 @@ namespace Controller
 
         public void HandleRotation(Vector3 adjustedDirection)
         {
-            if ( _playerActionsInput.AttackPressed == true) 
-            { 
-                adjustedDirection = _aimTarget.position; 
-                transform.LookAt(adjustedDirection); 
+            if (_playerActionsInput != null && _aimTarget != null)
+            {
+                if (_playerActionsInput.AttackPressed == true)
+                { 
+                    adjustedDirection = _aimTarget.position;
+                    transform.LookAt(adjustedDirection);
+                }
             }
+            
 
             if (adjustedDirection.magnitude > Zero && _playerActionsInput.AttackPressed == false)
             {
