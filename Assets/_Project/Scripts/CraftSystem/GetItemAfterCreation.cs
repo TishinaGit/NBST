@@ -33,10 +33,10 @@ namespace CraftSystem
         {
             isBTMClick = true;
             _crafts.CraftPotion();
-            SetPropertiesCreateItem(ItemTypeEnum.None, " ", _itemAvatar); 
+            _crafts.ItemTakeCheck(); 
         }
 
-        public void UpdateTimeBool()
+        public void UpdateTimeBool()  
         {
             time = 0.3f;
             if (isBTMClick == true)

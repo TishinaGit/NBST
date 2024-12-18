@@ -12,8 +12,8 @@ namespace CraftSystem
     {
         [SerializeField] private CraftSO _craftSO;
         [SerializeField] private GetItemAfterCreation _getItemAfterCreation;
-        [SerializeField] private InventoryPanel _inventoryPanel;
-        [SerializeField] private List<InventoryCell> _cellItemData; 
+        [SerializeField] private InventoryPanel _inventoryPanel; 
+        [SerializeField] private List<InventoryCell> _cellItemData;
          
         private void OnEnable()
         {
@@ -82,17 +82,18 @@ namespace CraftSystem
                 dataCell.ReDraw();
                 DataCentralService.Instance.InventoryStates.UpdateCellData(dataCell.CurrentData);
                 _getItemAfterCreation.isBTMClick = false;
+
             }
         } 
 
         public void CellGet(InventoryCell cell)
         {
-            _cellItemData.Add(cell);
+            _cellItemData.Add(cell); 
         } 
 
         private void CreateItem(Receipts receipt)
         {
-             _inventoryPanel.AddItem(receipt.ItemPotionType, receipt.Count, 4);  
+             _inventoryPanel.AddItem(receipt.ItemPotionType, receipt.Count, 4); 
         } 
 
         public void RemoveMaterial(Receipts receipts)
@@ -108,5 +109,13 @@ namespace CraftSystem
             _cellItemData.Remove(cellData);
         }
 
+
+        public void ItemTakeCheck() 
+        {
+            if (_cellItemData.Count <= 1)
+            {
+                _getItemAfterCreation.SetPropertiesCreateItem(ItemTypeEnum.None, " ", _getItemAfterCreation._itemAvatar);
+            }
+        }
     }
 }

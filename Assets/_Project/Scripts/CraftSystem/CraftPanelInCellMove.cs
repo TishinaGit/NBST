@@ -15,8 +15,7 @@ namespace CraftSystem
 
         private GameObject _dropped;
         private Transform _lastCell;
-
-      
+         
         public void OnDrop(PointerEventData eventData)
         {
             // Drop
