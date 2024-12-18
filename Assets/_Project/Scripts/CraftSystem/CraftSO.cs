@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using Inventory;
+using ReceiptsSystem;
 
 namespace CraftSystem
 {

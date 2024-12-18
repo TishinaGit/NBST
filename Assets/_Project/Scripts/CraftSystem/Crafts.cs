@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Data;
 
-using Inventory; 
+using ReceiptsSystem;
+using Inventory;
+
 
 
 namespace CraftSystem

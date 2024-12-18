@@ -1,9 +1,10 @@
-﻿using Inventory;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Inventory
+using Inventory;
+
+namespace ReceiptsSystem
 {
     [Serializable]
     public class Receipts

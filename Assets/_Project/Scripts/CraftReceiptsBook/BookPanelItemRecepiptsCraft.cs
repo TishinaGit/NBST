@@ -7,15 +7,17 @@ using CraftSystem;
 
 namespace ReceiptsSystem
 {
-    public class BookPanelItemRecepiptsCraft : MonoBehaviour, IPointerClickHandler, IPointerExitHandler
+    public class BookPanelItemRecepiptsCraft : MonoBehaviour ,IPointerClickHandler, IPointerExitHandler
     {
-        [SerializeField] private CraftSO _craftSO;
+        [SerializeField] private CraftSO _craftSO; 
+         
         [SerializeField] private GameObject _craftReceiptsPanel;
-        [SerializeField] private Image[] _itemReceiptsData;
-        [SerializeField] private GameObject _transformPanel;
+        [SerializeField] private Transform _transformPanel;
+        [SerializeField] private Image[] _recipeMaterialSprites;
+
         public ItemTypeEnum ItemType;
 
-        public void GFD()
+        public void RecipeMaterialSpritesUI()
         {
             foreach (var item in _craftSO.ReceiptsPotions)
             {
@@ -23,8 +25,8 @@ namespace ReceiptsSystem
                 {
                     var a = item.itemsForReceiptstStructs[0];
                     var b = item.itemsForReceiptstStructs[1];
-                    _itemReceiptsData[0].sprite = a.SpriteItem;
-                    _itemReceiptsData[1].sprite = b.SpriteItem;
+                    _recipeMaterialSprites[0].sprite = a.SpriteItem;
+                    _recipeMaterialSprites[1].sprite = b.SpriteItem;
                     _craftReceiptsPanel.SetActive(true);
                     _craftReceiptsPanel.transform.position = _transformPanel.transform.position;
                 }
@@ -34,14 +36,12 @@ namespace ReceiptsSystem
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            GFD();
+            RecipeMaterialSpritesUI();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _craftReceiptsPanel.SetActive(false);
-        }
-
-
+            _craftReceiptsPanel.SetActive(false); 
+        } 
     }
 }

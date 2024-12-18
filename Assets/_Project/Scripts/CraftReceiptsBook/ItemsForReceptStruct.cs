@@ -1,7 +1,9 @@
-﻿using Inventory;
-using System;
+﻿using System;
 using UnityEngine;
-namespace Inventory
+
+using Inventory;
+
+namespace ReceiptsSystem
 {
     [Serializable]
     public class ItemsForReceptStruct
