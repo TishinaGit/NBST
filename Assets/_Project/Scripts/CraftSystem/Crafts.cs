@@ -5,9 +5,7 @@ using Data;
 
 using ReceiptsSystem;
 using Inventory;
-
-
-
+  
 namespace CraftSystem
 {
     public class Crafts : MonoBehaviour
