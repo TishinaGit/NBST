@@ -434,8 +434,10 @@ MonoBehaviour:
   _count: {fileID: 2363156712990988578}
   _iconItem: {fileID: 0}
   _spriteTransparent: {fileID: 0}
+  _tets: {fileID: 0}
   CurrentData:
     CellIndex: 0
+    ID: 0
     Type: 0
     AvatarItem: {fileID: 0}
     Count: 0
@@ -834,8 +836,10 @@ MonoBehaviour:
   _count: {fileID: 2398015316805499001}
   _iconItem: {fileID: 0}
   _spriteTransparent: {fileID: 0}
+  _tets: {fileID: 0}
   CurrentData:
     CellIndex: 0
+    ID: 0
     Type: 0
     AvatarItem: {fileID: 0}
     Count: 0
@@ -3480,8 +3484,10 @@ MonoBehaviour:
   _count: {fileID: 9124080264919135028}
   _iconItem: {fileID: 0}
   _spriteTransparent: {fileID: 0}
+  _tets: {fileID: 0}
   CurrentData:
     CellIndex: 0
+    ID: 0
     Type: 0
     AvatarItem: {fileID: 0}
     Count: 0

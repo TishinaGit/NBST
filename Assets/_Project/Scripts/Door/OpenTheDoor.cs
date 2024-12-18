@@ -1,10 +1,12 @@
 using UnityEngine;
+
 [RequireComponent (typeof(AudioSource))]
 public class OpenTheDoor : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _sourceOpen;
     [SerializeField] private AudioSource _sourceClose;
+
     protected static readonly int openDoorHash = Animator.StringToHash("OpenDoorAnim");
     protected static readonly int closeDoorHash = Animator.StringToHash("CloseDoorAnim");
 
@@ -13,10 +15,8 @@ public class OpenTheDoor : MonoBehaviour
         _sourceOpen.Play();
     }
     private void OnTriggerStay(Collider other)
-    {
-        
-        _animator.Play(openDoorHash);
-        
+    { 
+        _animator.Play(openDoorHash); 
     }
 
     private void OnTriggerExit(Collider other)

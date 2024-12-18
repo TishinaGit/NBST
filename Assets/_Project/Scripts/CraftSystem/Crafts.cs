@@ -96,7 +96,7 @@ namespace CraftSystem
              _inventoryPanel.AddItem(receipt.ItemPotionType, receipt.Count, 4); 
         } 
 
-        public void RemoveMaterial(Receipts receipts)
+        private void RemoveMaterial(Receipts receipts)
         {
             foreach (var RemoveData in _cellItemData)
             {
@@ -107,15 +107,20 @@ namespace CraftSystem
         public void RemoveCellItemDataFromList(InventoryCell cellData)
         {
             _cellItemData.Remove(cellData);
+            ItemTakeCheck();
         }
 
 
         public void ItemTakeCheck() 
         {
-            if (_cellItemData.Count <= 1)
+            for (int i = 0;  i < _cellItemData.Count; i++)
             {
-                _getItemAfterCreation.SetPropertiesCreateItem(ItemTypeEnum.None, " ", _getItemAfterCreation._itemAvatar);
+                if (_cellItemData.Count <= 1)
+                {
+                    _getItemAfterCreation.SetPropertiesCreateItem(ItemTypeEnum.None, " ", _getItemAfterCreation._itemAvatar);
+                }
             }
+            
         }
     }
 }

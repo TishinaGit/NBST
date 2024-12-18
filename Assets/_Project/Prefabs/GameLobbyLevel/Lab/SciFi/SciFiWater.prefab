@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7017827296193647383}
+  - component: {fileID: 5241331831793386362}
+  - component: {fileID: 1826373211026316490}
   m_Layer: 0
   m_Name: SciFiWater
   m_TagString: Untagged
@@ -26,13 +28,49 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5000001, y: 1.5, z: 1.5000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2151515457244020335}
   - {fileID: 2277560917778475478}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5241331831793386362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3981778740964627051}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2287767, y: 4.549554, z: 2.3196738}
+  m_Center: {x: -0.040276445, y: 1.7747965, z: 0.65983623}
+--- !u!114 &1826373211026316490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3981778740964627051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ed7c65aee26454295d01c155310273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uiObject: {fileID: 0}
+  _uiActionEText: {fileID: 0}
+  _cinemachineFreeLook: {fileID: 0}
 --- !u!1 &5456514949798545721
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +82,7 @@ GameObject:
   - component: {fileID: 2151515457244020335}
   - component: {fileID: 4397902125796457015}
   - component: {fileID: 7866940314550607493}
+  - component: {fileID: 7605664248528012494}
   m_Layer: 0
   m_Name: Cube.015
   m_TagString: Untagged
@@ -73,7 +112,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5456514949798545721}
-  m_Mesh: {fileID: -3537709356157935800, guid: 1cdfcfd7e68aabe4996e56b76fc07141, type: 3}
+  m_Mesh: {fileID: -3537709356157935800, guid: f333ccee8f3f46c409cd5746580393b3, type: 3}
 --- !u!23 &7866940314550607493
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -116,6 +155,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7605664248528012494
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456514949798545721}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020759998, y: 0.039892558, z: 0.01727332}
+  m_Center: {x: 0, y: 0.020427503, z: -0.061940197}
 --- !u!1 &8930356139788991248
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +216,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8930356139788991248}
-  m_Mesh: {fileID: 855131390749405241, guid: 1cdfcfd7e68aabe4996e56b76fc07141, type: 3}
+  m_Mesh: {fileID: 855131390749405241, guid: f333ccee8f3f46c409cd5746580393b3, type: 3}
 --- !u!23 &7480032226758905243
 MeshRenderer:
   m_ObjectHideFlags: 0

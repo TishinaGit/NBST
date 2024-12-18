@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
+using System.Collections; 
 
-using Inventory; 
-
+using Inventory;
+ 
 namespace CraftSystem
 {
     public class GetItemAfterCreation : MonoBehaviour
@@ -13,15 +14,15 @@ namespace CraftSystem
         public Sprite _itemAvatar;
         public ItemTypeEnum ItemType;
         public TMP_Text CountText;
-        public Image AvatarItem ;
+        public Image AvatarItem;
 
         public bool isBTMClick = false;
-        public float time;
 
-        private void Update() //Ref!!!
+        private void Update()  
         {
-            UpdateTimeBool();
+            CheckBool();
         }
+
         public void SetPropertiesCreateItem(ItemTypeEnum itemTypeEnum, string text, Sprite sprite)
         {
             ItemType = itemTypeEnum;
@@ -33,21 +34,21 @@ namespace CraftSystem
         {
             isBTMClick = true;
             _crafts.CraftPotion();
-            _crafts.ItemTakeCheck(); 
+            _crafts.ItemTakeCheck();
         }
 
-        public void UpdateTimeBool()  
+        private void CheckBool()
         {
-            time = 0.3f;
             if (isBTMClick == true)
             {
-                time -= 12 * Time.deltaTime;
-                if (time <= 0)
-                {
-                    isBTMClick = false;
-                    time = 0.3f;
-                }
+                StartCoroutine(UpdateBool());
             }
+        }
+
+        private IEnumerator UpdateBool()
+        { 
+            yield return new WaitForSeconds(0.2f);
+            isBTMClick = false;
         }
     }
 }
