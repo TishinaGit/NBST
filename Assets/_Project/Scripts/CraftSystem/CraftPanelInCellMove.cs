@@ -21,8 +21,8 @@ namespace CraftSystem
             // Drop
             _dropped = eventData.pointerDrag;
             var draggableItem = _dropped.GetComponent<DragItem>();
-            _lastCell = draggableItem.parentAfterDrag;
-            draggableItem.parentAfterDrag = transform;
+            _lastCell = draggableItem.ParentAfterDrag;
+            draggableItem.ParentAfterDrag = transform;
             //\
 
             //search InventoryCell for _cellItemData.List<InventoryCell> 

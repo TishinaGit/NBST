@@ -2368,8 +2368,8 @@ MonoBehaviour:
   - {fileID: 7583874400224585113}
   - {fileID: 4175805690442061951}
   - {fileID: 5077554582304377554}
-  _ContainerPrefab: {fileID: 0}
-  _Panel: {fileID: 7189017865426467046}
+  _containerPrefab: {fileID: 0}
+  _panel: {fileID: 4821055844694491912}
   _itemsData:
   - {fileID: 0}
   - {fileID: 0}
@@ -3347,6 +3347,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _addSpriteForItem: {fileID: 0}
 --- !u!1 &7583874400224585113
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,31 +2,28 @@ using UnityEngine;
 using Cinemachine;  
 
 public class CreationPortal : MonoBehaviour
-{
-
+{ 
     [Header("Placement Parameters")]
-    [SerializeField] private GameObject placeableObjectPrefab;
-    [SerializeField] private GameObject previewObjectPrefab;
-    [SerializeField] private CinemachineFreeLook playerCamera;
-    [SerializeField] private LayerMask placementSurfaceLayerMask;
+    [SerializeField] private GameObject _placeableObjectPrefab;
+    [SerializeField] private GameObject _previewObjectPrefab;
+    [SerializeField] private CinemachineFreeLook _playerCamera;
+    [SerializeField] private LayerMask _placementSurfaceLayerMask;
 
     [Header("Preview Material")]
-    [SerializeField] private Material previewMaterial;
-    [SerializeField] private Color validColor;
-    [SerializeField] private Color invalidColor;
+    [SerializeField] private Material _previewMaterial;
+    [SerializeField] private Color _validColor;
+    [SerializeField] private Color _invalidColor;
 
     [Header("Raycast Parameters")]
-    [SerializeField] private float objectDistanceFromPlayer;
-    [SerializeField] private float raycastStartVerticalOffset;
-    [SerializeField] private float raycastDistance;
+    [SerializeField] private float _objectDistanceFromPlayer;
+    [SerializeField] private float _raycastStartVerticalOffset;
+    [SerializeField] private float _raycastDistance;
 
     private GameObject _previewObject = null;
     private Vector3 _currentPlacementPosition = Vector3.zero;
     private bool _inPlacementMode = false;
     private bool _validPreviewState = false;
-
-   
-
+     
     private void Update()
     {
         UpdateInput();
@@ -44,19 +41,19 @@ public class CreationPortal : MonoBehaviour
 
     private void UpdateCurrentPlacementPosition()
     {
-        Vector3 cameraForward = new Vector3(playerCamera.transform.forward.x, 0f, playerCamera.transform.forward.z);
+        Vector3 cameraForward = new Vector3(_playerCamera.transform.forward.x, 0f, _playerCamera.transform.forward.z);
         cameraForward.Normalize();
 
-        Vector3 startPos = playerCamera.transform.position + (cameraForward * objectDistanceFromPlayer);
-        startPos.y += raycastStartVerticalOffset;
+        Vector3 startPos = _playerCamera.transform.position + (cameraForward * _objectDistanceFromPlayer);
+        startPos.y += _raycastStartVerticalOffset;
 
         RaycastHit hitInfo;
-        if (Physics.Raycast(startPos, Vector3.down, out hitInfo, raycastDistance, placementSurfaceLayerMask))
+        if (Physics.Raycast(startPos, Vector3.down, out hitInfo, _raycastDistance, _placementSurfaceLayerMask))
         {
             _currentPlacementPosition = hitInfo.point;
         }
 
-        Quaternion rotation = Quaternion.Euler(0f, playerCamera.transform.eulerAngles.y, 0f);
+        Quaternion rotation = Quaternion.Euler(0f, _playerCamera.transform.eulerAngles.y, 0f);
         _previewObject.transform.position = _currentPlacementPosition;
         _previewObject.transform.rotation = rotation;
     }
@@ -79,13 +76,13 @@ public class CreationPortal : MonoBehaviour
 
     private void SetValidPreviewState()
     {
-        previewMaterial.color = validColor;
+        _previewMaterial.color = _validColor;
         _validPreviewState = true;
     }
 
     private void SetInvalidPreviewState()
     {
-        previewMaterial.color = invalidColor;
+        _previewMaterial.color = _invalidColor;
         _validPreviewState = false;
     }
 
@@ -102,8 +99,8 @@ public class CreationPortal : MonoBehaviour
         if (!_inPlacementMode || !_validPreviewState)
             return;
 
-        Quaternion rotation = Quaternion.Euler(0f, playerCamera.transform.eulerAngles.y, 0f);
-        Instantiate(placeableObjectPrefab, _currentPlacementPosition, rotation, transform);
+        Quaternion rotation = Quaternion.Euler(0f, _playerCamera.transform.eulerAngles.y, 0f);
+        Instantiate(_placeableObjectPrefab, _currentPlacementPosition, rotation, transform);
 
         ExitPlacementMode();
     }
@@ -114,8 +111,8 @@ public class CreationPortal : MonoBehaviour
             return;
 
 
-        Quaternion rotation = Quaternion.Euler(0f, playerCamera.transform.eulerAngles.y, 0f);
-        _previewObject = Instantiate(previewObjectPrefab, _currentPlacementPosition, rotation, transform);
+        Quaternion rotation = Quaternion.Euler(0f, _playerCamera.transform.eulerAngles.y, 0f);
+        _previewObject = Instantiate(_previewObjectPrefab, _currentPlacementPosition, rotation, transform);
         _inPlacementMode = true;
     }
 

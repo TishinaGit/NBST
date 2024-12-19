@@ -7,7 +7,7 @@ public class PortalDome : MonoBehaviour
      
     private void Update()
     {
-        Kostil(); 
+        ActionDome(); 
         if (_isActive == true)
         {
             _dome.transform.localScale = Vector3.Lerp(_dome.transform.localScale, new Vector3(7, 7, 7),   Time.deltaTime);
@@ -15,7 +15,7 @@ public class PortalDome : MonoBehaviour
         
     }
 
-    private void Kostil()
+    private void ActionDome()
     {
         if (Input.GetKeyUp(KeyCode.E))
         {

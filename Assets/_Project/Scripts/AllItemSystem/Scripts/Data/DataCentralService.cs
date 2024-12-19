@@ -6,7 +6,7 @@ namespace Data
 {
     public class DataCentralService : MonoBehaviour
     {
-        [SerializeField] protected Test _tets;
+        [SerializeField] private AddSpriteForItem _addSpriteForItem;
         private JsonSerialization _jsonSerialization = new();
         private string _pathInventory;
 
@@ -28,7 +28,7 @@ namespace Data
         public void LoadStates()
         {
             InventoryStates.ReadStates(_jsonSerialization.DeSerialization(_pathInventory));
-            _tets.GiveSpriteItem();
+            _addSpriteForItem.GiveSpriteItem();
         }
     }
 }

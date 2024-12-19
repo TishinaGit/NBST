@@ -5,9 +5,9 @@ using UnityEngine;
 public class DissolveEnemy : MonoBehaviour
 {
     private const float _maxTreshold = 1;
-    private const string TresholdKey = "_Dissolve";
+    private const string _tresholdKey = "_Dissolve";
     private MeshRenderer _render;
-    private bool h;
+    private bool _checkEventDeath;
 
     private void Awake()
     {
@@ -16,12 +16,12 @@ public class DissolveEnemy : MonoBehaviour
 
     private void Update()
     {
-        GGg();
+        OnShaderDeath();
     }
 
-    private void GGg()
+    private void OnShaderDeath()
     { 
-        if (h == true)
+        if (_checkEventDeath == true)
         {
             if (DeathMaterial() != null)
             {
@@ -32,9 +32,9 @@ public class DissolveEnemy : MonoBehaviour
        
     }
 
-    public void GO()
+    public void EnemtEventDeath()
     {
-        h = true;
+        _checkEventDeath = true;
     }
      
     private IEnumerator DeathMaterial()
@@ -43,7 +43,7 @@ public class DissolveEnemy : MonoBehaviour
         while (treshold < _maxTreshold)
         {
             treshold += Time.deltaTime;
-            _render.material.SetFloat(TresholdKey, treshold);
+            _render.material.SetFloat(_tresholdKey, treshold);
             yield return null;
         } 
     } 

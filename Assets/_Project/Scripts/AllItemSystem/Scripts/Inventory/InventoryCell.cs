@@ -11,7 +11,7 @@ namespace Inventory
         [SerializeField] private TextMeshProUGUI _count;
         [SerializeField] private Image _iconItem;
         [SerializeField] private Sprite _spriteTransparent;
-        [SerializeField] protected Test _tets;
+        [SerializeField] protected AddSpriteForItem _addSpriteForItem;
         public InventoryCellData CurrentData;
         public int Index;
          
@@ -62,7 +62,7 @@ namespace Inventory
             { 
                 _count.text = CurrentData.Count.ToString();
                 
-                _tets.GiveSpriteItem();
+                _addSpriteForItem.GiveSpriteItem();
                 _iconItem.sprite = CurrentData.AvatarItem;
             }
             

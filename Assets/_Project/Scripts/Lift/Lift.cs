@@ -47,8 +47,7 @@ public class Lift : MonoBehaviour
 
     #region MoveLift
     private void BTM_MoveLiftFloor1()
-    {
-        
+    { 
         if (_isMoveLift1 == true)
         {
             _targetLift.transform.localPosition = Vector3.MoveTowards(_targetLift.transform.localPosition, _floor1, speed * Time.deltaTime);
@@ -56,8 +55,7 @@ public class Lift : MonoBehaviour
     }
 
     private void BTM_MoveLiftFloor2()
-    {
-        
+    { 
         if (_isMoveLift2 == true)
         {
             _targetLift.transform.localPosition = Vector3.MoveTowards(_targetLift.transform.localPosition, _floor2, speed * Time.deltaTime);

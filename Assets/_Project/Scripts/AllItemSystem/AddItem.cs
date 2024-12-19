@@ -8,7 +8,9 @@ public class AddItem : MonoBehaviour
     [SerializeField] private GameObject _dropItem;
     [SerializeField] private InventoryPanel _inventoryPanel;
     [SerializeField] private Sprite _sprite;
-    private bool h;
+
+    private bool _checkDeathEnemy;
+
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -17,13 +19,13 @@ public class AddItem : MonoBehaviour
 
     private void Update()
     {
-        GGg(); 
+        StartCoruoutineDeath(); 
     }
      
 
-    private void GGg()
+    private void StartCoruoutineDeath()
     {
-        if (h == true)
+        if (_checkDeathEnemy == true)
         {
             if (_dropItem != null)
             {
@@ -34,9 +36,9 @@ public class AddItem : MonoBehaviour
 
     }
 
-    public void GO()
+    public void EnemyDeathBool()
     {
-        h = true;
+        _checkDeathEnemy = true;
     }
 
     public IEnumerator MoveObject()

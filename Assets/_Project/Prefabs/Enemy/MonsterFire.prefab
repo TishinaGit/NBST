@@ -167,11 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82af5ebc26a71c4ab4c1f14470332fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mode: 0
-  m_WeaponProperties: {fileID: 11400000, guid: 49e635dd4ed47a645a87b9ee629ee92e, type: 2}
-  m_FirePoint: {fileID: 2582775322842477228}
-  m_PrimaryMaxEnergy: 60
+  _weaponProperties: {fileID: 11400000, guid: 49e635dd4ed47a645a87b9ee629ee92e, type: 2}
+  _firePoint: {fileID: 2582775322842477228}
   _audioSource: {fileID: 5473857589421586309}
+  _mode: 0
+  _primaryMaxEnergy: 50
 --- !u!82 &5473857589421586309
 AudioSource:
   m_ObjectHideFlags: 0
@@ -414,15 +414,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
-  m_Indestructible: 0
-  m_HitPoints: 100
-  m_TeamId: 0
-  m_EventOnDeath:
+  _indestructible: 0
+  _hitPoints: 40
+  _teamId: 0
+  _eventOnDeath:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 470605798468632084}
         m_TargetAssemblyTypeName: DissolveEnemy, Assembly-CSharp
-        m_MethodName: GO
+        m_MethodName: EnemtEventDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -434,7 +434,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4409013873669283871}
         m_TargetAssemblyTypeName: AddItem, Assembly-CSharp
-        m_MethodName: GO
+        m_MethodName: EnemyDeathBool
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -444,11 +444,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_ScoreValue: 0
-  m_EventOnGetDamage:
+  _scoreValue: 0
+  _eventOnGetDamage:
     m_PersistentCalls:
       m_Calls: []
-  m_EntityId: 0
+  _entityId: 0
   _mainMesh: {fileID: 2542644262957838092}
   _weapons:
   - {fileID: 1887812443097980744}

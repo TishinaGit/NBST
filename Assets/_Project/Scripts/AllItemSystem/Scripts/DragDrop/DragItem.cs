@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Transform parentAfterDrag;
-    public Image image;
+    public Transform ParentAfterDrag;
+    public Image ImageRayTarget;
     public void OnBeginDrag(PointerEventData eventData)
     {   
-        parentAfterDrag = transform.parent; 
+        ParentAfterDrag = transform.parent; 
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
-        image.raycastTarget = false;
+        ImageRayTarget.raycastTarget = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -21,7 +21,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(parentAfterDrag);
-        image.raycastTarget = true; 
+        transform.SetParent(ParentAfterDrag);
+        ImageRayTarget.raycastTarget = true; 
     }
 }

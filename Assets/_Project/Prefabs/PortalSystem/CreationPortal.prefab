@@ -44,17 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb43b03059f6bec449882cf86d6865c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeableObjectPrefab: {fileID: 9171825369883775623, guid: 388a7df66dac4064ca1fd7a5f0926d2d,
+  _placeableObjectPrefab: {fileID: 9171825369883775623, guid: 388a7df66dac4064ca1fd7a5f0926d2d,
     type: 3}
-  previewObjectPrefab: {fileID: 3910846274963816258, guid: cc7b64bcf77b7d946a0811ecc9da9b38,
+  _previewObjectPrefab: {fileID: 3910846274963816258, guid: cc7b64bcf77b7d946a0811ecc9da9b38,
     type: 3}
-  playerCamera: {fileID: 0}
-  placementSurfaceLayerMask:
+  _playerCamera: {fileID: 0}
+  _placementSurfaceLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  previewMaterial: {fileID: 2100000, guid: 17c6582319045b74b88754353f6a46b1, type: 2}
-  validColor: {r: 0, g: 1, b: 0.16524458, a: 0.49019608}
-  invalidColor: {r: 1, g: 0, b: 0, a: 0.49019608}
-  objectDistanceFromPlayer: 20
-  raycastStartVerticalOffset: 100
-  raycastDistance: 1000
+  _previewMaterial: {fileID: 2100000, guid: 17c6582319045b74b88754353f6a46b1, type: 2}
+  _validColor: {r: 0.043736577, g: 1, b: 0, a: 0}
+  _invalidColor: {r: 1, g: 0, b: 0, a: 0}
+  _objectDistanceFromPlayer: 10
+  _raycastStartVerticalOffset: 100
+  _raycastDistance: 1000

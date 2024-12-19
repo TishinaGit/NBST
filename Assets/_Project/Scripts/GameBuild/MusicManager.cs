@@ -5,20 +5,26 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class MusicManager : MonoBehaviour
 {
-    public AudioClip[] _audioClips;
-    private AudioSource _audioSource;
-
-    public Toggle toggleMusic;
-    public Slider sliderVolumeMusic;
-    public float volume;
-
+    [SerializeField] private AudioClip[] _audioClips; 
+    [SerializeField] private Toggle _toggleMusic;
+    [SerializeField] private Slider _sliderVolumeMusic;
+    [SerializeField] private float _volume; 
+    [SerializeField] private AudioSource _audioSource;
+     
     public void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(PlayMusic());
-    }
+    } 
 
+    void Start()
+    {
+        Load();
+        ValueMusic();
+        StartCoroutine(Foo());
+        StartCoroutine(Bar());
+    }
     IEnumerator PlayMusic()
     {
         for (int i = 0; i < _audioClips.Length; i++)
@@ -29,13 +35,6 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        Load();
-        ValueMusic();
-        StartCoroutine(Foo());
-        StartCoroutine(Bar());
-    }
     IEnumerator Foo()
     {
         yield return null;
@@ -46,20 +45,20 @@ public class MusicManager : MonoBehaviour
     }
     public void BTM_SliderMusic()
     {
-        volume = sliderVolumeMusic.value;
+        _volume = _sliderVolumeMusic.value;
         Save();
         ValueMusic();
     }
 
     public void BTM_ToggleMusic()
     {
-        if (toggleMusic.isOn == true)
+        if (_toggleMusic.isOn == true)
         {
-            volume = 0.1f;
+            _volume = 0.1f;
         }
         else
         {
-            volume = 0;
+            _volume = 0;
         }
         Save();
         ValueMusic();
@@ -67,18 +66,18 @@ public class MusicManager : MonoBehaviour
 
     private void ValueMusic()
     {
-        _audioSource.volume = volume;
-        sliderVolumeMusic.value = volume;
-        if (volume == 0) { toggleMusic.isOn = false; } else { toggleMusic.isOn = true; }
+        _audioSource.volume = _volume;
+        _sliderVolumeMusic.value = _volume;
+        if (_volume == 0) { _toggleMusic.isOn = false; } else { _toggleMusic.isOn = true; }
     }
 
     private void Save()
     {
-        PlayerPrefs.SetFloat("volume", volume);
+        PlayerPrefs.SetFloat("volume", _volume);
     }
     private void Load()
     {
-        volume = PlayerPrefs.GetFloat("volume", volume);
+        _volume = PlayerPrefs.GetFloat("volume", _volume);
     }
 
 }

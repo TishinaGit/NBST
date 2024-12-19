@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class ListTaskSo : ScriptableObject
+namespace Task
 {
-    public List<ListTask> listTasks;
+    [CreateAssetMenu]
+    public class ListTaskSo : ScriptableObject
+    {
+        public List<ListTask> ListTasks;
 
+    } 
 }

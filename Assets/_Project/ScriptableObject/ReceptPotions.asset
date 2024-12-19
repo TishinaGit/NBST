@@ -21,7 +21,7 @@ MonoBehaviour:
     - ItemType: 7
       SpriteItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
       Count: 1
-      isInStock: 1
+      isInStock: 0
     - ItemType: 10
       SpriteItem: {fileID: 21300000, guid: 117b17facff65dc42b1b57deb7c21551, type: 3}
       Count: 1

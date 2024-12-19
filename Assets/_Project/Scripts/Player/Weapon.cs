@@ -1,54 +1,51 @@
 using UnityEngine;
 
-//[RequireComponent(typeof(AudioSource))]
 public class Weapon : MonoBehaviour
-{
-	[SerializeField] private WeaponMode m_Mode;
-	public WeaponMode Mode => m_Mode;
+{ 
+    [SerializeField] private WeaponProperties _weaponProperties; 
+	[SerializeField] private Transform _firePoint;  
+    [SerializeField] private AudioSource _audioSource;
 
-	[SerializeField] private WeaponProperties m_WeaponProperties;
 
-	[SerializeField] private Transform m_FirePoint;
+    [SerializeField] private WeaponMode _mode;
+    public WeaponMode Mode => _mode;
 
-	[SerializeField] private float m_PrimaryMaxEnergy; 
+    [SerializeField] private float _primaryMaxEnergy; 
+    public float PrimaryMaxEnergy => _primaryMaxEnergy;
 
-	private float m_RefireTimer;
 
-	public bool CanFire => m_RefireTimer <= 0 && EnergyIsRestored == false;
+    private float _primaryEnergy;
+    public float PrimaryEnergy => _primaryEnergy;
 
-	public float PrimaryMaxEnergy => m_PrimaryMaxEnergy;
-	public float PrimaryEnergy => m_PrimaryEnergy;
+    private float _refireTimer;  
+    private bool _energyIsRestored;
+    public bool CanFire => _refireTimer <= 0 && _energyIsRestored == false;
 
-	private float m_PrimaryEnergy;
-
-	private bool EnergyIsRestored;
-
-	public AudioSource _audioSource;
-
-	private Destructible m_Owner;
-
-	private void Start()
+	 
+    private Destructible _owner;
+	 
+    private void Start()
 	{
-		m_PrimaryEnergy = m_PrimaryMaxEnergy;
+		_primaryEnergy = _primaryMaxEnergy;
 
-		m_Owner = transform.root.GetComponent<Destructible>(); 
+		_owner = transform.root.GetComponent<Destructible>(); 
 	}
 
 	protected virtual void Update()
 	{
-		if (m_RefireTimer > 0)
-			m_RefireTimer -= Time.deltaTime;
+		if (_refireTimer > 0)
+			_refireTimer -= Time.deltaTime;
 
 		UpdateEnergy();
 	}
 
 	private void UpdateEnergy()
 	{
-		m_PrimaryEnergy += (float)m_WeaponProperties.EnergyRegenPerSecond * Time.deltaTime;
-		m_PrimaryEnergy = Mathf.Clamp(m_PrimaryEnergy, 0, m_PrimaryMaxEnergy);
+		_primaryEnergy += (float)_weaponProperties.EnergyRegenPerSecond * Time.deltaTime;
+		_primaryEnergy = Mathf.Clamp(_primaryEnergy, 0, _primaryMaxEnergy);
 
-		if (m_PrimaryEnergy >= m_WeaponProperties.EnergyAmountToStartFire)
-			EnergyIsRestored = false;
+		if (_primaryEnergy >= _weaponProperties.EnergyAmountToStartFire)
+			_energyIsRestored = false;
 	}
 
 	private bool TryDrawEnergy(int count)
@@ -58,56 +55,56 @@ public class Weapon : MonoBehaviour
 			return true;
 		}
 
-		if (m_PrimaryEnergy >= count)
+		if (_primaryEnergy >= count)
 		{
-			m_PrimaryEnergy -= count;
+			_primaryEnergy -= count;
 			return true;
 		}
 
-		EnergyIsRestored = true;
+		_energyIsRestored = true;
 		return false;
 	}
 
 	public void Fire()
 	{
-		if (EnergyIsRestored == true)
+		if (_energyIsRestored == true)
 			return;
 
 		if (CanFire == false)
 			return;
 
-		if (m_WeaponProperties == null)
+		if (_weaponProperties == null)
 			return;
-		if (m_RefireTimer > 0)
-			return;
-
-		if (TryDrawEnergy(m_WeaponProperties.EnergyUsage) == false)
+		if (_refireTimer > 0)
 			return;
 
+		if (TryDrawEnergy(_weaponProperties.EnergyUsage) == false)
+			return;
 
-		Projectile projectile = Instantiate(m_WeaponProperties.ProjectilePrefab).GetComponent<Projectile>();
-		projectile.transform.position = m_FirePoint.position;
-		projectile.transform.forward = m_FirePoint.forward;
 
-		projectile.SetParentShooter(m_Owner);
+		Projectile projectile = Instantiate(_weaponProperties.ProjectilePrefab).GetComponent<Projectile>();
+		projectile.transform.position = _firePoint.position;
+		projectile.transform.forward = _firePoint.forward;
 
-		m_RefireTimer = m_WeaponProperties.RateOfFire; 
+		projectile.SetParentShooter(_owner);
+
+		_refireTimer = _weaponProperties.RateOfFire; 
 		{ 
-			_audioSource.clip = m_WeaponProperties.LaunchSFX;
+			_audioSource.clip = _weaponProperties.LaunchSFX;
 			_audioSource.Play();
 		}
 	}
 
 	public void FirePointLookAt(Vector3 pos)
 	{
-		Vector3 offset = Random.insideUnitSphere * m_WeaponProperties.SpreadShotRange;
+		Vector3 offset = Random.insideUnitSphere * _weaponProperties.SpreadShotRange;
 
-		if (m_WeaponProperties.SpreadShotDistanceFactor != 0)
+		if (_weaponProperties.SpreadShotDistanceFactor != 0)
 		{
-			offset = offset * Vector3.Distance(m_FirePoint.position, pos) * m_WeaponProperties.SpreadShotDistanceFactor;
+			offset = offset * Vector3.Distance(_firePoint.position, pos) * _weaponProperties.SpreadShotDistanceFactor;
 		}
 
-		m_FirePoint.LookAt(pos + offset);
+		_firePoint.LookAt(pos + offset);
 	}
 
     public void AssignLoadout(WeaponProperties props)
@@ -115,7 +112,7 @@ public class Weapon : MonoBehaviour
 		if (Mode != props.Mode)
 			return;
 
-		m_RefireTimer = 0;
-		m_WeaponProperties = props;
+		_refireTimer = 0;
+		_weaponProperties = props;
 	}
 }

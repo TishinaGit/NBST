@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SoundPlayUIButton : MonoBehaviour
 {
-    [SerializeField] private AudioSource _uiButton;
+    [SerializeField] private AudioSource _uiButtonSound;
 
     public void BTM_PlaySound()
     {
-        _uiButton.Play();
+        _uiButtonSound.Play();
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine; 
 
-public class Test : MonoBehaviour
+public class AddSpriteForItem : MonoBehaviour
 {
     [SerializeField] private ItemConfigList _itemConfigList;
     [SerializeField] private ItemUIList _itemUIList;
@@ -36,9 +36,7 @@ public class Test : MonoBehaviour
                 if (item.CurrentData.ID == sprite.ID)
                 {
                     item.CurrentData.AvatarItem = sprite.AvatarItem;
-                }
-
-                
+                } 
             }
         }
     } 

@@ -2,10 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-using Inventory;
-using System;
-
-
+using Inventory; 
+ 
 namespace Task
 {
     public class SubmitTask : MonoBehaviour
@@ -56,7 +54,7 @@ namespace Task
 
         private void ComparisonItems()
         { 
-            var task = _listTaskSo.listTasks[_takeTask._saveIndexCurrentTask];
+            var task = _listTaskSo.ListTasks[_takeTask._saveIndexCurrentTask];
 
             for (int i = 0; i < _suitableItem.Count; i++)
             {
@@ -80,7 +78,7 @@ namespace Task
 
         private void RemoveItems()
         {
-            var task = _listTaskSo.listTasks[_takeTask._saveIndexCurrentTask];
+            var task = _listTaskSo.ListTasks[_takeTask._saveIndexCurrentTask];
             
             for (int i = 0; i < _suitableItem.Count; i++)
             {  

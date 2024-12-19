@@ -2,33 +2,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-/// <summary>
-/// An object to be destroyed on the stage, something that can be destroyed
-/// </summary>
 public class Destructible : Entity, ISerializableEntity
 {
 	#region Properties
 
-	/// <summary>
-	/// Object ignores damage
-	/// </summary>
-	[SerializeField] private bool m_Indestructible;
-	public bool IsIndestructible => m_Indestructible;
+	 
+	[SerializeField] private bool _indestructible;
+	public bool IsIndestructible => _indestructible;
 
-	/// <summary>
-	/// Start amount of Hit points
-	/// </summary>
-	[SerializeField] private int m_HitPoints;
-	public int HealthPoints => m_HitPoints;
+	 
+	[SerializeField] private int _hitPoints;
+	public int HealthPoints => _hitPoints;
 
-	/// <summary>
-	/// Current amount of Hit points
-	/// </summary>
-	private int m_CurrentHitPoints;
-	public int HitPoints => m_CurrentHitPoints;
+	 
+	private int _currentHitPoints;
+	public int HitPoints => _currentHitPoints;
 
-	private bool m_IsDeath = false;
-	public bool IsDeath => m_IsDeath;
+	private bool _isDeath = false;
+	public bool IsDeath => _isDeath;
 
 	#endregion
 
@@ -37,7 +28,7 @@ public class Destructible : Entity, ISerializableEntity
 
 	protected virtual void Start()
 	{
-		m_CurrentHitPoints = m_HitPoints;
+		_currentHitPoints = _hitPoints;
 	}
 
 	#endregion
@@ -46,28 +37,25 @@ public class Destructible : Entity, ISerializableEntity
 
 	public void SetHitPoint(int hitPoint)
 	{
-		m_CurrentHitPoints = Mathf.Clamp(hitPoint, 0, m_HitPoints);
+		_currentHitPoints = Mathf.Clamp(hitPoint, 0, _hitPoints);
 	}
 
-	/// <summary>
-	/// Make damage to object
-	/// </summary>
-	/// <param name="damage"> Amount of damage </param>
+	 
 	public void ApplyDamage(int damage, Destructible other)
 	{
 
-		if (m_Indestructible || m_IsDeath)
+		if (_indestructible || _isDeath)
 			return;
 
-		m_CurrentHitPoints -= damage;
+		_currentHitPoints -= damage;
 
 		OnGetDamage?.Invoke(other);
 
-		m_EventOnGetDamage?.Invoke();
+		_eventOnGetDamage?.Invoke();
 
-		if (m_CurrentHitPoints <= 0)
+		if (_currentHitPoints <= 0)
 		{
-			m_IsDeath = true;
+			_isDeath = true;
 
 			OnDeath();
 		}
@@ -75,31 +63,29 @@ public class Destructible : Entity, ISerializableEntity
 
 	public void ApplyHeal(int heal)
 	{
-		m_CurrentHitPoints += heal;
+		_currentHitPoints += heal;
 
-		if (m_CurrentHitPoints > m_HitPoints)
-			m_CurrentHitPoints = m_HitPoints;
+		if (_currentHitPoints > _hitPoints)
+			_currentHitPoints = _hitPoints;
 	}
 
 	public void HealFull()
 	{
-		m_CurrentHitPoints = m_HitPoints;
+		_currentHitPoints = _hitPoints;
 	}
 
 	public void MakeIndestructible(bool b)
 	{
-		m_Indestructible = b;
+		_indestructible = b;
 	}
 
 	#endregion
 
-	/// <summary>
-	/// Destroys object, when hit points are less then 0
-	/// </summary>
+	 
 	protected virtual void OnDeath()
 	{
 		Destroy(gameObject);
-		m_EventOnDeath?.Invoke();
+		_eventOnDeath?.Invoke();
 	}
 
 
@@ -108,7 +94,7 @@ public class Destructible : Entity, ISerializableEntity
 		float minDist = float.MaxValue;
 		Destructible target = null;
 
-		foreach (Destructible dest in m_AllDestructibles)
+		foreach (Destructible dest in _allDestructibles)
 		{
 			float curDist = Vector3.Distance(dest.transform.position, position);
 
@@ -127,7 +113,7 @@ public class Destructible : Entity, ISerializableEntity
 		float minDist = float.MaxValue;
 		Destructible target = null;
 
-		foreach (Destructible dest in m_AllDestructibles)
+		foreach (Destructible dest in _allDestructibles)
 		{
 			float curDist = Vector3.Distance(dest.transform.position, destructible.transform.position);
 
@@ -145,7 +131,7 @@ public class Destructible : Entity, ISerializableEntity
 	{
 		List<Destructible> teamDestructable = new List<Destructible>();
 
-		foreach (Destructible dest in m_AllDestructibles)
+		foreach (Destructible dest in _allDestructibles)
 		{
 			if (dest.TeamId == teamId)
 			{
@@ -160,7 +146,7 @@ public class Destructible : Entity, ISerializableEntity
 	{
 		List<Destructible> teamDestructable = new List<Destructible>();
 
-		foreach (Destructible dest in m_AllDestructibles)
+		foreach (Destructible dest in _allDestructibles)
 		{
 			if (dest.TeamId != teamId)
 			{
@@ -172,42 +158,42 @@ public class Destructible : Entity, ISerializableEntity
 	}
 
 
-	private static HashSet<Destructible> m_AllDestructibles;
+	private static HashSet<Destructible> _allDestructibles;
 
-	public static IReadOnlyCollection<Destructible> AllDestructibles => m_AllDestructibles;
+	public static IReadOnlyCollection<Destructible> AllDestructibles => _allDestructibles;
 
 	protected virtual void OnEnable()
 	{
-		if (m_AllDestructibles == null)
-			m_AllDestructibles = new HashSet<Destructible>();
+		if (_allDestructibles == null)
+			_allDestructibles = new HashSet<Destructible>();
 
-		m_AllDestructibles.Add(this);
+		_allDestructibles.Add(this);
 	}
 
 	protected virtual void OnDestroy()
 	{
-		m_AllDestructibles.Remove(this);
+		_allDestructibles.Remove(this);
 	}
 
 
 	public const int TeamIdNeutral = 0;
 
-	[SerializeField] private int m_TeamId;
-	public int TeamId => m_TeamId;
+	[SerializeField] private int _teamId;
+	public int TeamId => _teamId;
 
 
-	[SerializeField] private UnityEvent m_EventOnDeath;
-	public UnityEvent EventOnDeath => m_EventOnDeath;
+	[SerializeField] private UnityEvent _eventOnDeath;
+	public UnityEvent EventOnDeath => _eventOnDeath;
 
 	#region Score
 
-	[SerializeField] private int m_ScoreValue;
-	public int ScoreValue => m_ScoreValue;
+	[SerializeField] private int _scoreValue;
+	public int ScoreValue => _scoreValue;
 
 	public long Entity => throw new System.NotImplementedException();
 
 	#endregion
-	[SerializeField] private UnityEvent m_EventOnGetDamage;
+	[SerializeField] private UnityEvent _eventOnGetDamage;
 	public UnityAction<Destructible> OnGetDamage;
 
 	// Serialize
@@ -221,12 +207,12 @@ public class Destructible : Entity, ISerializableEntity
 		public State() { }
 	}
 
-	[SerializeField] private int m_EntityId;
-	public long EntityId => m_EntityId;
+	[SerializeField] private int _entityId;
+	public long EntityId => _entityId;
 
 	public virtual bool IsSerializable()
 	{
-		return m_CurrentHitPoints > 0;
+		return _currentHitPoints > 0;
 	}
 
 	public virtual string SerializeState()
@@ -234,7 +220,7 @@ public class Destructible : Entity, ISerializableEntity
 		State s = new State();
 
 		s.position = transform.position;
-		s.hitPoints = m_CurrentHitPoints;
+		s.hitPoints = _currentHitPoints;
 
 		return JsonUtility.ToJson(s);
 	}
@@ -244,6 +230,6 @@ public class Destructible : Entity, ISerializableEntity
 		State s = JsonUtility.FromJson<State>(state);
 
 		transform.position = s.position;
-		m_HitPoints = s.hitPoints;
+		_hitPoints = s.hitPoints;
 	}
 }

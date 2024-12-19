@@ -23,8 +23,8 @@ namespace Inventory
                 FirstitemDroppedCellIndex.CurrentData.CellIndex = SeconditemDroppedCellIndex.CurrentData.CellIndex;
                 SeconditemDroppedCellIndex.CurrentData.CellIndex = _cellIndex;
 
-                currentDraggable.transform.SetParent(draggableItem.parentAfterDrag);
-                draggableItem.parentAfterDrag = transform;
+                currentDraggable.transform.SetParent(draggableItem.ParentAfterDrag);
+                draggableItem.ParentAfterDrag = transform;
             }
            
         } 

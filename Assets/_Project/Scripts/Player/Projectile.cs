@@ -1,19 +1,18 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : Entity
 {
-	[SerializeField] protected float m_Velocity;
+	[SerializeField] protected float _velocity;
 
-	[SerializeField] private float m_LifeTime;
+	[SerializeField] private float _lifeTime;
 
-	[SerializeField] protected int m_Damage; 
+	[SerializeField] protected int _damage; 
 
-	private float m_Timer;
+	private float _timer;
 
 	private void Update()
 	{
-		float stepLenght = Time.deltaTime * m_Velocity;
+		float stepLenght = Time.deltaTime * _velocity;
 		Vector3 step = transform.forward * stepLenght;
 
 		RaycastHit hit;// = Physics.Raycast(transform.position, transform.up, stepLenght);
@@ -26,14 +25,14 @@ public class Projectile : Entity
 
 				if (dest != null && dest != m_Parent)
 				{
-					dest.ApplyDamage(m_Damage, m_Parent);
+					dest.ApplyDamage(_damage, m_Parent);
 				} 
 			}
 		} 
 
-		m_Timer += Time.deltaTime;
+		_timer += Time.deltaTime;
 
-		if (m_Timer > m_LifeTime)
+		if (_timer > _lifeTime)
 		{
 			Destroy(gameObject);
 		}

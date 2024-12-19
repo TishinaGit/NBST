@@ -6,8 +6,7 @@ public class RandomSpawnGamePortal : MonoBehaviour
     [SerializeField] private Transform[] _spawnTarget; 
  
     private void RandomSpawn()
-    {
-        
+    { 
         int randomPoint = Random.Range(0, _spawnTarget.Length);
         Instantiate(_gamePortal, _spawnTarget[randomPoint].transform);
        

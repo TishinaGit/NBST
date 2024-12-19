@@ -7,7 +7,7 @@ namespace Inventory
     public class InventoryPanel : MonoBehaviour
     {
         [SerializeField] private List<InventoryCell> _inventoryCells = new();
-        [SerializeField] protected Test _tets;
+        [SerializeField] protected AddSpriteForItem _addSpriteForItem;
 
         private void Awake()
         {
@@ -45,7 +45,7 @@ namespace Inventory
                 if (firstEmptyCell == null && inventoryCell.CurrentData.Type == ItemTypeEnum.None)
                 {
                     firstEmptyCell = inventoryCell;
-                    _tets.GiveSpriteItem();
+                    _addSpriteForItem.GiveSpriteItem();
                     Save();
                     inventoryCell.ReDraw();
                     DataCentralService.Instance.InventoryStates.UpdateCellData(inventoryCell.CurrentData);
@@ -54,7 +54,7 @@ namespace Inventory
                 if (firstEmptyCell != null)
                 {
                     firstEmptyCell.AddNewItem(itemTypeEnum, count,  ID);
-                    _tets.GiveSpriteItem();
+                    _addSpriteForItem.GiveSpriteItem();
                     Save();
                     inventoryCell.ReDraw();
                     DataCentralService.Instance.InventoryStates.UpdateCellData(inventoryCell.CurrentData);
@@ -64,7 +64,7 @@ namespace Inventory
                 if (inventoryCell.CurrentData.Type == itemTypeEnum)
                 {
                     inventoryCell.AddCountItem(count);
-                     _tets.GiveSpriteItem();
+                     _addSpriteForItem.GiveSpriteItem();
                     Save();
                     inventoryCell.ReDraw();
                     DataCentralService.Instance.InventoryStates.UpdateCellData(inventoryCell.CurrentData);

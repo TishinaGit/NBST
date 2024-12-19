@@ -3,9 +3,7 @@ using UnityEngine;
 
 public class ContainerItemData : MonoBehaviour
 { 
-    [SerializeField] private GameObject[] _slotsItem;
-    [SerializeField] private GameObject _ContainerPrefab; 
-    [SerializeField] private GameObject _Panel;
+    [SerializeField] private GameObject[] _slotsItem; 
 
     public List<GameObject> _itemsData;
     private void Update()

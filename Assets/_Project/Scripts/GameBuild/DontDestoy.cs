@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ using UnityEngine;
 
 public class DontDestoy : MonoBehaviour
 {
@@ -8,6 +6,5 @@ public class DontDestoy : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-    }
-
+    } 
 }

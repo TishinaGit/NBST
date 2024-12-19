@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
-  m_Velocity: 350
-  m_LifeTime: 3
-  m_Damage: 50
+  _velocity: 220
+  _lifeTime: 3
+  _damage: 10
 --- !u!1 &8727111352296011730
 GameObject:
   m_ObjectHideFlags: 0

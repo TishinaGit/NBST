@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+ using UnityEngine; 
 
-public class ButtonExitGame : MonoBehaviour
+public class ButtonExitGame  
 {
     public void BTM_ExitGame()
     {

@@ -1,13 +1,15 @@
 ﻿using Inventory;
-using System;
-using TMPro;
+using System; 
 using UnityEngine;
-
-[Serializable]
-public class ItemTaskConfig
+ 
+namespace Task
 {
-    public ItemTypeEnum ItemTypeEnum;
-    public string DescriptionItem;
-    public Sprite AvatarItem;
-    public int Count;
+    [Serializable]
+    public class ItemTaskConfig
+    {
+        public ItemTypeEnum ItemTypeEnum;
+        public string DescriptionItem;
+        public Sprite AvatarItem;
+        public int Count;
+    } 
 }

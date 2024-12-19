@@ -203,12 +203,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9b2fb1188d5604ea7d50c8c1230956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EntityPrefab:
+  _entityPrefab:
   - {fileID: 5478108250551458127, guid: 7b3b5f5f45bce074790569c27748628b, type: 3}
-  m_Area: {fileID: 9039921355212173450}
-  m_SpawnMode: 1
-  m_NumSpawn: 4
-  m_RespawnTime: 10
+  _area: {fileID: 9039921355212173450}
+  _spawnMode: 1
+  _numSpawn: 5
+  _respawnTime: 10
 --- !u!1 &669513866475705467
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ Transform:
   m_GameObject: {fileID: 1308263539278086932}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8a6e5a523fdfc489323e12221f4459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Area: {x: 30, y: 20, z: 30}
+  area: {x: 35, y: 5, z: 35}
 --- !u!1 &1366621802136108900
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +940,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2252306604797612543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.014281137, y: -0.000000017221424, z: -2.459666e-10, w: 0.999898}
+  m_LocalRotation: {x: -0.014281116, y: 0.000000017196234, z: 2.456065e-10, w: 0.999898}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1766,7 +1766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3886918321696638295}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.014281148, y: -0.000000034417656, z: -4.915738e-10, w: 0.999898}
+  m_LocalRotation: {x: -0.014281108, y: 0.000000034417663, z: 4.915725e-10, w: 0.999898}
   m_LocalPosition: {x: 0.009999999, y: 1.57, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3554,7 +3554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935260832934757606}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03564617, y: 0.00000001719545, z: -6.1334166e-10, w: 0.9993645}
+  m_LocalRotation: {x: 0.035646193, y: -0.000000017195447, z: 6.133419e-10, w: 0.9993645}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4282,17 +4282,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
-  m_Indestructible: 0
-  m_HitPoints: 100
-  m_TeamId: 0
-  m_EventOnDeath:
+  _indestructible: 0
+  _hitPoints: 150
+  _teamId: 0
+  _eventOnDeath:
     m_PersistentCalls:
       m_Calls: []
-  m_ScoreValue: 0
-  m_EventOnGetDamage:
+  _scoreValue: 0
+  _eventOnGetDamage:
     m_PersistentCalls:
       m_Calls: []
-  m_EntityId: 0
+  _entityId: 0
 --- !u!1 &8026659687307607032
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,11 +4685,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82af5ebc26a71c4ab4c1f14470332fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mode: 0
-  m_WeaponProperties: {fileID: 11400000, guid: fd9fb9796244ed840a9573af2a481569, type: 2}
-  m_FirePoint: {fileID: 8897072035349017015}
-  m_PrimaryMaxEnergy: 1000
+  _weaponProperties: {fileID: 11400000, guid: fd9fb9796244ed840a9573af2a481569, type: 2}
+  _firePoint: {fileID: 8897072035349017015}
   _audioSource: {fileID: 4805050809458823359}
+  _mode: 0
+  _primaryMaxEnergy: 1000
 --- !u!82 &4805050809458823359
 AudioSource:
   m_ObjectHideFlags: 0

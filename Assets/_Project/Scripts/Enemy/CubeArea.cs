@@ -1,21 +1,16 @@
 using UnityEngine;
-
-
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
+  
 public class CubeArea : MonoBehaviour
 {
-	[SerializeField] private Vector3 Area;
+	[SerializeField] private Vector3 area;
 
 	public Vector3 GetRandomInsideZone()
 	{
 		Vector3 result = transform.position;
 
-		result.x += Random.Range(-Area.x / 2, Area.x / 2);
-		result.y += Random.Range(-Area.y / 2, Area.y / 2);
-		result.z += Random.Range(-Area.z / 2, Area.z / 2);
+		result.x += Random.Range(-area.x / 2, area.x / 2);
+		result.y += Random.Range(-area.y / 2, area.y / 2);
+		result.z += Random.Range(-area.z / 2, area.z / 2);
 
 		return result;
 	}
@@ -25,7 +20,7 @@ public class CubeArea : MonoBehaviour
 	private void OnDrawGizmos()
 	{
 		Gizmos.color = Color.green;
-		Gizmos.DrawWireCube(transform.position, Area);
+		Gizmos.DrawWireCube(transform.position, area);
 	}
 #endif
 }

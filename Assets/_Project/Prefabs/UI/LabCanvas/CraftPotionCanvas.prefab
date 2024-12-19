@@ -520,7 +520,6 @@ MonoBehaviour:
   CountText: {fileID: 6055357995496396885}
   AvatarItem: {fileID: 2210940173254559977}
   isBTMClick: 0
-  time: 0
 --- !u!1 &1809043044485238036
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +775,6 @@ MonoBehaviour:
   _craftSO: {fileID: 11400000, guid: b66f44376d7ba9942a24d0f4aded4561, type: 2}
   _getItemAfterCreation: {fileID: 3116756390417099804}
   _inventoryPanel: {fileID: 2986809917876631792}
-  _cellItemData: []
 --- !u!114 &7770930873779695816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,8 +808,6 @@ MonoBehaviour:
   - {fileID: 7321342096827249488}
   - {fileID: 6740836784198863810}
   - {fileID: 5579552114159706132}
-  _ContainerPrefab: {fileID: 0}
-  _Panel: {fileID: 3050883362099891973}
   _itemsData:
   - {fileID: 0}
   - {fileID: 0}
@@ -2241,7 +2237,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _tets: {fileID: 0}
+  _addSpriteForItem: {fileID: 0}
 --- !u!1001 &49414224265551328
 PrefabInstance:
   m_ObjectHideFlags: 0

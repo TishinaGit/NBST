@@ -34,7 +34,7 @@ namespace CraftSystem
         {
             isBTMClick = true;
             _crafts.CraftPotion();
-            _crafts.ItemTakeCheck();
+           _crafts.ItemTakeCheck();
         }
 
         private void CheckBool()
