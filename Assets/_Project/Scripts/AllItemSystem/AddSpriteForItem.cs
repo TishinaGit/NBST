@@ -1,12 +1,19 @@
  using Inventory;
 using System.Collections.Generic;
-using UnityEngine; 
+using UnityEngine;
+using Zenject;
 
 public class AddSpriteForItem : MonoBehaviour
 {
     [SerializeField] private ItemConfigList _itemConfigList;
     [SerializeField] private ItemUIList _itemUIList;
-    [SerializeField] private List<InventoryCell>  _inventoryCells;
+    public List<InventoryCell>  _inventoryCells;
+     
+    [Inject]
+    public void Construct(List<InventoryCell> _inventoryCells)
+    {
+       this._inventoryCells = _inventoryCells;
+    }
 
     private void Awake()
     {

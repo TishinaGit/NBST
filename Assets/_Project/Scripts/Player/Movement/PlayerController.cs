@@ -1,4 +1,5 @@
-using UnityEngine; 
+using UnityEngine;
+using Zenject;
 
 namespace Controller
 {
@@ -13,7 +14,7 @@ namespace Controller
         [SerializeField] private PlayerLocomotionInput _playerLocomotionInput;
         [SerializeField] private PlayerActionsInput _playerActionsInput;
         [SerializeField] private PlayerState _playerState;
-        [SerializeField] private Transform _mainCam;
+        
         [SerializeField] private Transform _aimTarget; 
 
         [Header("MovementSettings")]
@@ -28,9 +29,17 @@ namespace Controller
          
         private bool _jumpedLastFrame = false;
         private PlayerMovementState _lastMovementState = PlayerMovementState.Falling;
-
+        private Transform _mainCameraTransform;
+         
         [Header("Environment Details")]
         [SerializeField] private LayerMask _groundLayers;
+
+        [Inject]
+        public void Consruct(Transform cameraTransform)
+        {
+            _mainCameraTransform = cameraTransform; 
+        }
+
         private void Awake()
         {
             _playerLocomotionInput = GetComponentInChildren<PlayerLocomotionInput>();
@@ -110,7 +119,7 @@ namespace Controller
                               isSprinting ? SprintSpeed : RunSpeed;
               
             var movementInput = new Vector3(_playerLocomotionInput.MovementInput.x, 0f, _playerLocomotionInput.MovementInput.y).normalized;  
-            var adjustedDirection = Quaternion.AngleAxis(_mainCam.eulerAngles.y, Vector3.up) * movementInput; 
+            var adjustedDirection = Quaternion.AngleAxis(_mainCameraTransform.eulerAngles.y, Vector3.up) * movementInput; 
 
             var adjusteMovement = adjustedDirection * (clampLateralMagnitude * Time.deltaTime);
             adjusteMovement.y += _verticalVelocity * Time.deltaTime;

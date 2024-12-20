@@ -3,6 +3,7 @@ using Data.Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Inventory
 {
@@ -11,10 +12,16 @@ namespace Inventory
         [SerializeField] private TextMeshProUGUI _count;
         [SerializeField] private Image _iconItem;
         [SerializeField] private Sprite _spriteTransparent;
-        [SerializeField] protected AddSpriteForItem _addSpriteForItem;
+        public AddSpriteForItem _addSpriteForItem;
         public InventoryCellData CurrentData;
         public int Index;
-         
+
+        [Inject]
+        public void AddSprite(AddSpriteForItem addSpriteForItem)
+        {
+            this._addSpriteForItem = addSpriteForItem;
+        }
+
         public void InitIndex(int index)
         {
             Index = index;

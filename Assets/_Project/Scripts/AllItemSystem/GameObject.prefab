@@ -46,24 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemConfigList: {fileID: 11400000, guid: c54255d8b95d4fa46be3d013c2c2bf9e, type: 2}
   _itemUIList: {fileID: 11400000, guid: 6d51aa1fa6e5df0488ad9a39d4cbf3b1, type: 2}
-  _inventoryCells:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _inventoryCells: []

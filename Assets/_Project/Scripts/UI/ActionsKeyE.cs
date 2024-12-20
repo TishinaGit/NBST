@@ -1,12 +1,18 @@
 using Cinemachine;
 using UnityEngine;
+using Zenject;
 
 public class ActionsKeyE : MonoBehaviour
 {
     [SerializeField] private GameObject _uiObject;
     [SerializeField] private GameObject _uiActionEText;
-    [SerializeField] private CinemachineFreeLook _cinemachineFreeLook;
+    public CinemachineFreeLook CinemachineFreeLook;
 
+    [Inject]
+    public void Consruct(CinemachineFreeLook cinemachineFreeLook)
+    {
+        CinemachineFreeLook = cinemachineFreeLook;
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -15,8 +21,8 @@ public class ActionsKeyE : MonoBehaviour
             _uiActionEText.SetActive(true);
             if (Input.GetKey(KeyCode.E))
             {
-                _cinemachineFreeLook.m_XAxis.m_MaxSpeed = 0f;
-                _cinemachineFreeLook.m_YAxis.m_MaxSpeed = 0f;
+                CinemachineFreeLook.m_XAxis.m_MaxSpeed = 0f;
+                CinemachineFreeLook.m_YAxis.m_MaxSpeed = 0f;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
 
@@ -29,8 +35,8 @@ public class ActionsKeyE : MonoBehaviour
     {
         if (other != null)
         {
-            _cinemachineFreeLook.m_XAxis.m_MaxSpeed = 250f;
-            _cinemachineFreeLook.m_YAxis.m_MaxSpeed = 1f;
+            CinemachineFreeLook.m_XAxis.m_MaxSpeed = 250f;
+            CinemachineFreeLook.m_YAxis.m_MaxSpeed = 1f;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             _uiActionEText.SetActive(false);

@@ -297,7 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiObject: {fileID: 0}
   _uiActionEText: {fileID: 0}
-  _cinemachineFreeLook: {fileID: 0}
+  CinemachineFreeLook: {fileID: 0}
 --- !u!4 &5419853350500910158 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8691510635674932013, guid: 25bcc49578232914c9906875d7f67ab3,
