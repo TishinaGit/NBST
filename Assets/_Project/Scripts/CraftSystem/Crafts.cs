@@ -14,7 +14,7 @@ namespace CraftSystem
         [SerializeField] private GetItemAfterCreation _getItemAfterCreation;
         [SerializeField] private InventoryPanel _inventoryPanel; 
 
-        private List<InventoryCell> _cellItemData;
+        public List<InventoryCell> _cellItemData;
          
         private void OnEnable()
         {

@@ -9,9 +9,9 @@ public class ActionsKeyE : MonoBehaviour
     public CinemachineFreeLook CinemachineFreeLook;
 
     [Inject]
-    public void Consruct(CinemachineFreeLook cinemachineFreeLook)
+    public void Construct(CinemachineFreeLook CinemachineFreeLook)
     {
-        CinemachineFreeLook = cinemachineFreeLook;
+        this.CinemachineFreeLook = CinemachineFreeLook;
     }
 
     private void OnTriggerStay(Collider other)

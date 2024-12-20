@@ -601,11 +601,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2045106553}
     m_Modifications:
-    - target: {fileID: 75285221245494175, guid: c56e63db7cc538642beb4206c2cb5627,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3289787093238245118}
     - target: {fileID: 1915206121242412952, guid: c56e63db7cc538642beb4206c2cb5627,
         type: 3}
       propertyPath: m_Name
@@ -7713,7 +7708,7 @@ GameObject:
   - component: {fileID: 5333786919430787452}
   - component: {fileID: 5752852507968789087}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SceneInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15413,5 +15408,5 @@ SceneRoots:
   - {fileID: 1388606570}
   - {fileID: 7798745693082308502}
   - {fileID: 8334463820682972870}
-  - {fileID: 1228083871003908663}
   - {fileID: 3362910488569447155}
+  - {fileID: 1228083871003908663}

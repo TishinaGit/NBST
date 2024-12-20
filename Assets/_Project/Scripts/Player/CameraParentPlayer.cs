@@ -10,7 +10,7 @@ public class CameraParentPlayer : MonoBehaviour
     public CinemachineFreeLook CinemachineFreeLook; 
      
     [Inject]
-    public void Consruct(PlayerController controller, CinemachineFreeLook cinemachineFreeLook)
+    public void Construct(PlayerController controller, CinemachineFreeLook cinemachineFreeLook)
     {
         Controller = controller;
         CinemachineFreeLook = cinemachineFreeLook;  

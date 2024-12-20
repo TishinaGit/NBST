@@ -35,7 +35,7 @@ namespace Controller
         [SerializeField] private LayerMask _groundLayers;
 
         [Inject]
-        public void Consruct(Transform cameraTransform)
+        public void Construct(Transform cameraTransform)
         {
             _mainCameraTransform = cameraTransform; 
         }

@@ -17,7 +17,7 @@ namespace Inventory
         public int Index;
 
         [Inject]
-        public void AddSprite(AddSpriteForItem addSpriteForItem)
+        public void Construct(AddSpriteForItem addSpriteForItem)
         {
             this._addSpriteForItem = addSpriteForItem;
         }

@@ -1,9 +1,16 @@
-using UnityEngine; 
+using UnityEngine;
+using Zenject;
 
 public class ButtonLoadSettingsCanvas : MonoBehaviour
-{
-    [SerializeField] private GameObject _settingsCanvas;
+{ 
     [SerializeField] private GameObject _mainMenuCanvas;
+    public GameObject _settingsCanvas;
+
+    [Inject]
+    public void Construct(GameObject PanelSettingsCanvas)
+    {
+        this._settingsCanvas = PanelSettingsCanvas;
+    }
 
     public void BTM_OpenSettings()
     {
