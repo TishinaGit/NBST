@@ -3,7 +3,7 @@ using Zenject;
 
 public class MainMenuInstaller : MonoInstaller
 {
-    public Canvas PanelSettingsCanvas;
+    public GameObject PanelSettingsCanvas;
 
     public override void InstallBindings()
     {
@@ -12,6 +12,6 @@ public class MainMenuInstaller : MonoInstaller
 
     public void PanelSettings()
     {
-        Container.Bind<Canvas>().FromInstance(PanelSettingsCanvas).AsSingle();
+        Container.Bind<GameObject>().FromInstance(PanelSettingsCanvas).AsSingle();
     }
 }

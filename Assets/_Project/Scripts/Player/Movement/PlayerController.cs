@@ -37,10 +37,10 @@ namespace Controller
         [Inject]
         public void Construct(Transform cameraTransform)
         {
-            _mainCameraTransform = cameraTransform; 
+            _mainCameraTransform = cameraTransform;
         }
 
-        private void Awake()
+        private void Start() 
         {
             _playerLocomotionInput = GetComponentInChildren<PlayerLocomotionInput>();
             _playerState = GetComponentInChildren<PlayerState>();

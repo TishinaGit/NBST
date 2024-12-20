@@ -6,23 +6,24 @@ public class ActionsKeyE : MonoBehaviour
 {
     [SerializeField] private GameObject _uiObject;
     [SerializeField] private GameObject _uiActionEText;
-    public CinemachineFreeLook CinemachineFreeLook;
+
+    private CinemachineFreeLook _cinemachineFreeLook;
 
     [Inject]
     public void Construct(CinemachineFreeLook CinemachineFreeLook)
     {
-        this.CinemachineFreeLook = CinemachineFreeLook;
+        this._cinemachineFreeLook = CinemachineFreeLook; 
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other != null)
         {
-            _uiActionEText.SetActive(true);
+            _uiActionEText.SetActive(true); 
             if (Input.GetKey(KeyCode.E))
             {
-                CinemachineFreeLook.m_XAxis.m_MaxSpeed = 0f;
-                CinemachineFreeLook.m_YAxis.m_MaxSpeed = 0f;
+                _cinemachineFreeLook.m_XAxis.m_MaxSpeed = 0f;
+                _cinemachineFreeLook.m_YAxis.m_MaxSpeed = 0f;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
 
@@ -35,8 +36,8 @@ public class ActionsKeyE : MonoBehaviour
     {
         if (other != null)
         {
-            CinemachineFreeLook.m_XAxis.m_MaxSpeed = 250f;
-            CinemachineFreeLook.m_YAxis.m_MaxSpeed = 1f;
+            _cinemachineFreeLook.m_XAxis.m_MaxSpeed = 250f;
+            _cinemachineFreeLook.m_YAxis.m_MaxSpeed = 1f;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             _uiActionEText.SetActive(false);

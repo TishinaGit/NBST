@@ -6,26 +6,28 @@ using Zenject;
 public class CameraParentPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject _cameraSystem;
-    public PlayerController Controller;
-    public CinemachineFreeLook CinemachineFreeLook; 
-     
+
+    private CinemachineFreeLook _cinemachineFreeLook;
+    private PlayerController _controller;
+   
     [Inject]
-    public void Construct(PlayerController controller, CinemachineFreeLook cinemachineFreeLook)
+    public void Construct( CinemachineFreeLook cinemachineFreeLook, PlayerController controller)
     {
-        Controller = controller;
-        CinemachineFreeLook = cinemachineFreeLook;  
+        _cinemachineFreeLook = cinemachineFreeLook;
+        _controller = controller;
+          
     }
 
     private void Start()
-    { 
+    {  
         CamerasSettings();
     }
 
     private void CamerasSettings()
     { 
-        CinemachineFreeLook.Follow = Controller.gameObject.transform;
-        CinemachineFreeLook.LookAt = Controller.gameObject.transform; 
-        _cameraSystem.transform.parent = Controller.transform;
+        _cinemachineFreeLook.Follow = _controller.gameObject.transform;
+        _cinemachineFreeLook.LookAt = _controller.gameObject.transform; 
+        _cameraSystem.transform.parent = _controller.transform;
     }  
 } 
 

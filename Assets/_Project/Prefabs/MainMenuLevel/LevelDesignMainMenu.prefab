@@ -2233,7 +2233,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPC
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3744921927495455982, guid: 9622d5e19e63ded4e87b5d6c78a0a683, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 239365566443495175, guid: 9622d5e19e63ded4e87b5d6c78a0a683,

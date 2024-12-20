@@ -3554,7 +3554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935260832934757606}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.035646193, y: -0.000000017195447, z: 6.133419e-10, w: 0.9993645}
+  m_LocalRotation: {x: 0.03564617, y: 0.00000001719545, z: -6.1334166e-10, w: 0.9993645}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4234,7 +4234,6 @@ MonoBehaviour:
   _playerLocomotionInput: {fileID: 3414539811270634505}
   _playerActionsInput: {fileID: 5455204636205326668}
   _playerState: {fileID: 4696679179236348960}
-  _mainCam: {fileID: 6947563909295958273}
   _aimTarget: {fileID: 8453161452182505276}
   RunSpeed: 10
   SprintSpeed: 20

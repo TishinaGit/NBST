@@ -9,7 +9,7 @@ public class ButtonLoadSettingsCanvas : MonoBehaviour
     [Inject]
     public void Construct(GameObject PanelSettingsCanvas)
     {
-        this._settingsCanvas = PanelSettingsCanvas;
+         _settingsCanvas = PanelSettingsCanvas;
     }
 
     public void BTM_OpenSettings()
