@@ -14,9 +14,7 @@ namespace Controller
         [SerializeField] private PlayerLocomotionInput _playerLocomotionInput;
         [SerializeField] private PlayerActionsInput _playerActionsInput;
         [SerializeField] private PlayerState _playerState;
-        
-        [SerializeField] private Transform _aimTarget; 
-
+         
         [Header("MovementSettings")]
         [SerializeField] private float RunSpeed = 10f;
         [SerializeField] private float SprintSpeed = 20f;
@@ -29,15 +27,18 @@ namespace Controller
          
         private bool _jumpedLastFrame = false;
         private PlayerMovementState _lastMovementState = PlayerMovementState.Falling;
+
         private Transform _mainCameraTransform;
-         
+        private Transform _aimTarget;
+
         [Header("Environment Details")]
         [SerializeField] private LayerMask _groundLayers;
 
         [Inject]
-        public void Construct(Transform cameraTransform)
+        public void Construct(Transform CameraTransform, Transform AimTargetForCamera)
         {
-            _mainCameraTransform = cameraTransform;
+            _mainCameraTransform = CameraTransform;
+            _aimTarget = AimTargetForCamera;
         }
 
         private void Start() 

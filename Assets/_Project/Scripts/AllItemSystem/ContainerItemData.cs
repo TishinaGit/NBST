@@ -1,11 +1,18 @@
 using System.Collections.Generic;
-using UnityEngine; 
+using UnityEngine;
+using Zenject;
 
 public class ContainerItemData : MonoBehaviour
 { 
     [SerializeField] private GameObject[] _slotsItem; 
 
     public List<GameObject> _itemsData;
+
+    [Inject]
+    public void Construect(List<GameObject> ItemsData)
+    { 
+        _itemsData = ItemsData;
+    }
     private void Update()
     {
         BTM_ActiveInventoryPanel(); 

@@ -2368,29 +2368,7 @@ MonoBehaviour:
   - {fileID: 7583874400224585113}
   - {fileID: 4175805690442061951}
   - {fileID: 5077554582304377554}
-  _containerPrefab: {fileID: 0}
-  _panel: {fileID: 4821055844694491912}
-  _itemsData:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _itemsData: []
 --- !u!1 &5077554582304377554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,28 +3304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f8a2aaa0164a8394ad636f06fadc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventoryCells:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _addSpriteForItem: {fileID: 0}
 --- !u!1 &7583874400224585113
 GameObject:
   m_ObjectHideFlags: 0

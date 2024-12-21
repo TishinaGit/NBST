@@ -1,13 +1,21 @@
 ﻿using Data;  
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace Inventory
 {
     public class InventoryPanel : MonoBehaviour
     {
-        [SerializeField] private List<InventoryCell> _inventoryCells = new();
-        [SerializeField] protected AddSpriteForItem _addSpriteForItem;
+        private List<InventoryCell> _inventoryCells = new();
+        private AddSpriteForItem _addSpriteForItem;
+
+        [Inject]
+        public void Construct(AddSpriteForItem AddSpriteForItem, List<InventoryCell> InventoryCells)
+        {
+            _addSpriteForItem = AddSpriteForItem;
+            _inventoryCells = InventoryCells;
+        }
 
         private void Awake()
         {

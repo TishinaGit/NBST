@@ -1,6 +1,7 @@
 ﻿using Data.Inventory;
 using Tools;
 using UnityEngine;
+using Zenject;
 
 namespace Data
 {
@@ -12,7 +13,13 @@ namespace Data
 
         public static DataCentralService Instance;
         public InventoryStates InventoryStates = new();
-         
+
+        [Inject]
+        public void Construct(AddSpriteForItem AddSpriteForItem)
+        {
+            _addSpriteForItem = AddSpriteForItem;
+        }
+
         private void Awake()
         {
             Instance = this;

@@ -48,7 +48,6 @@ MonoBehaviour:
     type: 3}
   _previewObjectPrefab: {fileID: 3910846274963816258, guid: cc7b64bcf77b7d946a0811ecc9da9b38,
     type: 3}
-  _playerCamera: {fileID: 0}
   _placementSurfaceLayerMask:
     serializedVersion: 2
     m_Bits: 128

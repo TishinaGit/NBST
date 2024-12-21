@@ -1,19 +1,28 @@
 ﻿using UnityEngine;
+using Zenject;
 
 namespace Controller
 {
     public class AnimatorIKControl : MonoBehaviour
     {
-        [SerializeField] private Camera Camera;
+          
         [SerializeField] private Animator animator;
-
-        [SerializeField] private Transform objTarget;
+ 
         [SerializeField] private float headWeight;
         [SerializeField] private float bodyWeight;
         private float _horizontalClamp = 100f;
 
         private GameObject _objPivot;
 
+        private Camera _camera;
+        private Transform _objTarget;
+
+        [Inject]
+        public void Construct(Camera CameraPlayer, GameObject AimTargetForCamera)
+        {
+            _camera = CameraPlayer;
+            _objTarget = AimTargetForCamera.transform;
+        }
 
         private void Start()
         {
@@ -31,7 +40,7 @@ namespace Controller
             float minY = euler.y - _horizontalClamp;
             float maxY = euler.y + _horizontalClamp;
 
-            float camRotY = Camera.transform.eulerAngles.y;
+            float camRotY = _camera.transform.eulerAngles.y;
 
             if (camRotY > maxY || camRotY < minY)
             {
@@ -49,9 +58,9 @@ namespace Controller
         {
             if (animator != null)
             {
-                if (objTarget != null)
+                if (_objTarget != null)
                 {
-                    animator.SetLookAtPosition(objTarget.position);
+                    animator.SetLookAtPosition(_objTarget.position);
                     animator.SetLookAtWeight(1, bodyWeight, headWeight);
                 }
                 else

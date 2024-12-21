@@ -1,12 +1,12 @@
 using UnityEngine;
-using Cinemachine;  
+using Cinemachine;
+using Zenject;
 
 public class CreationPortal : MonoBehaviour
 { 
     [Header("Placement Parameters")]
     [SerializeField] private GameObject _placeableObjectPrefab;
-    [SerializeField] private GameObject _previewObjectPrefab;
-    [SerializeField] private CinemachineFreeLook _playerCamera;
+    [SerializeField] private GameObject _previewObjectPrefab; 
     [SerializeField] private LayerMask _placementSurfaceLayerMask;
 
     [Header("Preview Material")]
@@ -23,6 +23,14 @@ public class CreationPortal : MonoBehaviour
     private Vector3 _currentPlacementPosition = Vector3.zero;
     private bool _inPlacementMode = false;
     private bool _validPreviewState = false;
+
+    private CinemachineFreeLook _playerCamera;
+
+    [Inject]
+    public void Construct(CinemachineFreeLook CinemachineFreeLook)
+    {
+        _playerCamera = CinemachineFreeLook;
+    }
      
     private void Update()
     {
